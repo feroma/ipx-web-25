@@ -5,7 +5,7 @@ export const useAppState = () => {
     const state = useState('siteData', () => ({
         nav: [],
         pages: {},
-        currentPageId:0
+        currentPageId:null
     }))
 
     const updateState = (newData) => {

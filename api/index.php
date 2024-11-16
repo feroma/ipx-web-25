@@ -19,10 +19,16 @@ $response = [
 				'1' => [
 					"title" => 'First Section',
 					"body" => 'This is the first section',
+					"layout" => 'default',
 				],
 				'2' => [
 					"title" => 'Second Section',
 					"body" => 'This is the second section',
+					"layout" => 'alternative',
+				],
+				'3' => [
+					"title" => 'Third Section',
+					"body" => 'No layout specified',
 				]
 
 			]
