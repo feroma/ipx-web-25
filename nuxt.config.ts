@@ -3,7 +3,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  ssr: true,
+  //ssr: true,
   runtimeConfig: {
     public: {
       //apiBase: process.env.API_BASE || 'https://localhost/ipx-web-24/index.php'

@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <header>
-      <MainMenu />
+      <MainMenuClient />
     </header>
     <main>
       <slot />

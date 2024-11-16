@@ -1,33 +1,33 @@
 <template>
   <nav class="main-menu">
-    <ul>
-      <template v-if="nav">
+    <ClientOnly>
+      <ul v-if="nav">
         <li
             v-for="item in nav"
             :key="item.id"
             :class="{
-            'active': isActive(item.id),
-            'inactive': !isActive(item.id)
+            'active': +item.id === +currentPageId,
+            'inactive': +item.id !== +currentPageId
           }"
         >
           <NuxtLink :to="item.slug">{{ item.label }}</NuxtLink>
         </li>
+      </ul>
+      <template #fallback>
+        <div>Caricamento menu...</div>
       </template>
-    </ul>
+    </ClientOnly>
   </nav>
 </template>
 
 <script setup>
-import { computed } from 'vue'
 const { nav, currentPageId } = useAppState()
 
-// Funzione per controllare se l'item è attivo
-const isActive = (itemId) => {
-  return +itemId === +(currentPageId.value || 0)
-}
-
-// Assicuriamoci che nav sia reattivo
-const navItems = computed(() => nav.value || [])
+// Se necessario, puoi aggiungere un watcher per debugging
+watch([nav, currentPageId], ([newNav, newCurrentPageId]) => {
+  console.log('Nav changed:', newNav)
+  console.log('CurrentPageId changed:', newCurrentPageId)
+})
 </script>
 
 <style scoped>
