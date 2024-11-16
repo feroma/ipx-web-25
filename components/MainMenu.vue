@@ -1,8 +1,7 @@
-
 <template>
-  <nav class="main-menu">
+  <nav class="main-menu" v-if="nav">
     <ul>
-      <li v-for="item in nav" :key="item.id">
+      <li v-for="item in nav" :key="item.id" :class="+item.id === +currentPageId ? 'active':'inactive'">
         <NuxtLink :to="item.slug">{{ item.label }}</NuxtLink>
       </li>
     </ul>
@@ -10,15 +9,13 @@
 </template>
 
 <script setup>
-const { nav } = useAppState()
-console.log(nav)
+const {nav, currentPageId} = useAppState()
+// console.clear()
+// console.log('MAIN MENU', currentPageId.value)
 </script>
 
-<style scoped>
-.main-menu ul {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
+<style>
+.active {
+  font-weight: bold;
 }
 </style>

@@ -1,5 +1,8 @@
+import { useAppState } from './useAppState'
+
 export const useApi = () => {
     const config = useRuntimeConfig()
+    const { updateState } = useAppState()
 
     const fetchData = async () => {
         try {
@@ -13,7 +16,7 @@ export const useApi = () => {
             }
 
             const data = await response.json()
-            console.log('Fetching data:', data)
+            console.log("Fetched data", data)
             return data
         } catch (error) {
             console.error('Error fetching data:', error)
