@@ -1,0 +1,13 @@
+@mixin colors_classes(  $colors_map: $ipx_colors) {
+  @each $color_name, $color_hex in $colors_map {
+    .bg-#{$color_name} {
+      background-color: $color_hex!important;
+    }
+    .text-#{$color_name}
+    {
+      color: $color_hex!important;
+    }
+  }
+
+}
+@include colors_classes ();

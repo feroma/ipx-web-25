@@ -1,0 +1,78 @@
+// Characters which are escaped by the escape-svg function
+$escaped-characters: (
+                ("<", "%3c"),
+                (">", "%3e"),
+                ("#", "%23"),
+                ("(", "%28"),
+                (")", "%29"),
+);
+///layout
+$spacer:15px;
+$grid-breakpoints: (
+        xs: 0,
+        sm: 680px,
+        md: 920px,
+        lg: 1360px,
+        xl: 1920px,
+        xxl: 2550px,
+);
+
+$container-max-widths: (
+        sm: 100%,
+        md: 100%,
+        lg: 100%,
+        xl: 100%,
+  //xxl: 1920px,
+);
+$grid-columns: 14;
+$grid-gutter-width: $spacer*2;
+$grid-row-columns: 6;
+
+//COLORS
+$white:#fff;
+$white_op1:rgba(255,255,255,0.2);
+$white_op2:rgba(255,255,255,0.5);
+$black:#000;
+$blue: #002358;
+$blue_light:#007AD8;
+$blue_dark: #001432;
+$azure:#4CB9FF;
+$azure_light:#ACD1E9;
+$cool_gray_dark:#424C51;
+$cool_gray_light:#9DB0BB;
+$cool_gray_lighter:#D9D9D9;
+$ipx_colors: ();
+$ipx_colors: map-merge(
+                (
+                        "blue": $blue,
+                        "blue-light": $blue_light,
+                        "blue-dark": $blue_dark,
+                        "azure": $azure,
+                        "azure-light": $azure_light,
+                        "cool-gray-light": $cool_gray_light,
+                        "cool-gray-lighter": $cool_gray_lighter,
+                        "cool-gray-dark": $cool_gray_dark,
+                        "white": $white,
+                        "white_op1": $white_op1,
+                        "white_op2": $white_op2,
+                        "black": $black,
+                ),
+                $ipx_colors
+);
+// $elements
+$cta_element_radius:100px;
+$cta_element_inner_radius:15px;
+$cta_small_element_radius:50px;
+$cta_small_element_inner_radius:10px;
+$p_margin:$spacer*2;
+
+//img
+$img_radius_default: $spacer*2;
+$img_teaser_w1:220px;
+$img_teaser_w2:240px;
+$img_teaser_w3:375px;
+$img_teaser_w4:150px;
+
+///pager
+$icon_wrapper_radius: 80px;
+$icon_wrapper_radius_sm: 48px;

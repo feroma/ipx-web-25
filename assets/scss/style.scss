@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap');
+
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url('../fonts/PPMonumentExtended-Black.woff2') format('woff2'),
+  url('../fonts/PPMonumentExtended-Black.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url('../fonts/PPMonumentExtended-RegularItalic.woff2') format('woff2'),
+  url('../fonts/PPMonumentExtended-RegularItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url('../fonts/PPMonumentExtended-Light.woff2') format('woff2'),
+  url('../fonts/PPMonumentExtended-Light.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url('../fonts/PPMonumentExtended-BlackItalic.woff2') format('woff2'),
+  url('../fonts/PPMonumentExtended-BlackItalic.woff') format('woff');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url('../fonts/PPMonumentExtended-Regular.woff2') format('woff2'),
+  url('../fonts/PPMonumentExtended-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url('../fonts/PPMonumentExtended-LightItalic.woff2') format('woff2'),
+  url('../fonts/PPMonumentExtended-LightItalic.woff') format('woff');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@import "default";
+
+$debug_bg: rgba(255, 255, 255, 0.1);
+
+body {
+  background-color: $black;
+  color: $white;
+
+  //font-weight: 300;
+  font-family: "Wix Madefor Text", sans-serif;
+  //letter-spacing: 0.08em;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.section-wrapper {
+
+  //min-height: 100vh;
+  display: flex;
+  background-color: $blue_dark;
+  opacity: 0; /* Stato iniziale nascosto */
+  transition: border-left 0.4s;
+
+  &.active {
+    background-color: $blue;
+    // background-color: rgba(255,255,255,0.5);
+  }
+
+  ///DEBUG
+  //> *{
+  //  margin: 30px 0 ;
+  //}
+
+  min-height: 60vh;
+
+  .container {
+    border: solid 1px $debug_bg;
+
+  }
+
+  .row {
+    min-height: 60vh;
+
+    &, & > * {
+      background-color: $debug_bg;
+      border: solid 1px $debug_bg;
+    }
+  }
+}
+
+/**
+-----------------------------------------
+ */
+
+h1, h2, h3 {
+  font-family: 'PP Monument Extended', 'sans-serif';
+  font-weight: 200;
+}
+
+/**
+=============== responsive font size
+ */
+.tbase {
+  font-size: 16px;
+  line-height: 24px;
+  @include media-breakpoint-up(xxl) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+body {
+  @extend .tbase;
+}
+
+#mxr-logo {
+  position: relative;
+  margin-bottom: $spacer*2;
+
+  h1 {
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    position: absolute;
+  }
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+
+  path {
+    fill: $white;
+  }
+}
+
+
+/**
+=== PRETITLE
+ */
+.pretitle {
+  position: relative;
+  @extend .tbase;
+  font-weight: bold;
+  color: $azure_light;
+
+  display: block;
+  word-wrap: break-word;
+  padding-bottom: 10px;
+  margin-bottom: $spacer*2;
+
+  &:before {
+    content: '';
+    width: 275px;
+    height: 1px;
+    background-color: $azure_light;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+  }
+  &:after {
+    content: '';
+    width: 60px;
+    height: 1px;
+    background-color: $white;
+    left: -62px;
+    bottom: 0;
+    position: absolute;
+  }
+}
+/**
+=== summary
+ */
+.summary{
+  position: relative;
+  margin-bottom: $spacer*2;
+}
+
+.entry{
+  padding-bottom: $spacer*5;
+  p{
+    padding-left: $spacer*4;
+  }
+}
+/**
+=== cta
+ */
+.cta-button{
+  display: inline-flex;
+  .label{
+    display: block;
+    padding: 10px 10px 10px $spacer*4;
+  }
+  svg{
+    width: 48px;
+    height: auto;
+    path{
+      stroke:$azure_light ;
+      stroke-width: 2;
+    }
+  }
+}
+
+/**
+1
+2
+3
+4
+5
+6
+7
+<div style="width: 100%; height: 100%; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+<div style="align-self: stretch; padding-left: 65px; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+<div style="flex: 1 1 0; color: #ACD1E9; font-size: 18px; font-family: PP Monument Extended; font-weight: 800; word-wrap: break-word">iPerformX proudly present</div>
+</div>
+<div style="width: 60px; height: 0px; outline: 1px white solid; outline-offset: -0.50px"></div>
+<div style="width: 274px; height: 0px; opacity: 0.50; outline: 1px #ACD1E9 solid; outline-offset: -0.50px"></div>
+</div>
+ */
+
+
+.title-animated {
+  /* Stile base del titolo */
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  overflow: hidden;
+  position: relative;
+  font-family: 'PP Monument Extended', 'sans-serif';
+  //padding: 30px 0;
+}
+
+.title-char {
+  /* Contenitore per ogni carattere */
+  margin-right: 0.01em; /* Piccolo spazio tra i caratteri */
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+}
+
+.title-letter {
+  /* Stile delle lettere */
+  display: inline-block;
+  min-width: 0.2em; /* Gestisce meglio gli spazi */
+  white-space: pre; /* Mantiene gli spazi */
+
+  position: relative;
+  z-index: 10;
+}
+
+.title-block {
+  /* Stile del blocco bianco */
+  transform-origin: left center;
+  will-change: transform; /* Ottimizza le performance dell'animazione */
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 101%;
+  height: 100%;
+  background-color: white;
+}
+
+/* Gestisce gli spazi bianchi */
+.title-char:has(> .title-letter:empty) {
+  width: 0.3em;
+}
+
+

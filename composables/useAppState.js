@@ -12,15 +12,22 @@ export const useAppState = () => {
     const updateState = (newData) => {
         state.value = newData
     }
-    const updateCurrentPage = (newId) => {
-        state.value.currentPageId = newId
+    const updateCurrentPage = (pageId) => {
+        state.value.currentPageId = pageId
+        // Reset currentSectionId quando cambia pagina
+        state.value.currentSectionId = null
+    }
+    const updateCurrentSection = (sectionId) => {
+        state.value.currentSectionId = sectionId
     }
 
     return {
         nav: computed(() => state.value.nav),
         pages: computed(() => state.value.pages),
         currentPageId: computed(() => state.value.currentPageId),
+        currentSectionId: computed(() => state.value.currentSectionId),
         updateState,
-        updateCurrentPage
+        updateCurrentPage,
+        updateCurrentSection
     }
 }
