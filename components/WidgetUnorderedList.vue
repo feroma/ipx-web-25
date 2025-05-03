@@ -1,0 +1,27 @@
+<script setup>
+const props = defineProps({
+  content: {
+    type: Object,
+    required: true
+  }
+})
+
+</script>
+
+<template>
+  <ul class="simple-list">
+    <li v-for="(li, li_count) in content.items"
+    :key="'li-'+li_count"
+    >
+      <svg  viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.8732 16.6774H0.800308C0.35831 16.6774 0 16.3191 0 15.8771V0.800308C0 0.35831 0.35831 0 0.800308 0H16.2062C16.6482 0 17.0065 0.358311 17.0065 0.800309V11.544C17.0065 11.7563 16.9222 11.9598 16.7721 12.1099L12.4391 16.443C12.289 16.5931 12.0855 16.6774 11.8732 16.6774Z"/>
+      </svg>
+
+      <span v-html="li.props.html"/>
+    </li>
+  </ul>
+</template>
+
+<style scoped>
+
+</style>

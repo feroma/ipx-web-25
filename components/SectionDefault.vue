@@ -76,7 +76,7 @@ const getComponentName = (widgetName) => {
           :key="'row-'+row_count"
           :id="'row-'+row_count"
           class="row"
-          :class=row.class
+          :class="row.class || ''"
       >
         <div
             v-for="(col, column_count) in row.columns"

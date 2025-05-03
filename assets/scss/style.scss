@@ -77,10 +77,10 @@ body {
   display: flex;
   background-color: $blue_dark;
   opacity: 0; /* Stato iniziale nascosto */
-  transition: border-left 0.4s;
+  transition: all 0.4s;
 
   &.active {
-    background-color: $blue;
+    background-color: $blue_dark;
     // background-color: rgba(255,255,255,0.5);
   }
 
@@ -89,7 +89,7 @@ body {
   //  margin: 30px 0 ;
   //}
 
-  min-height: 60vh;
+  /*min-height: 60vh;
 
   .container {
     border: solid 1px $debug_bg;
@@ -103,21 +103,25 @@ body {
       background-color: $debug_bg;
       border: solid 1px $debug_bg;
     }
-  }
+  }*/
+
 }
 
 /**
 -----------------------------------------
  */
 
-h1, h2, h3 {
-  font-family: 'PP Monument Extended', 'sans-serif';
-  font-weight: 200;
-}
+//.min-vh-100 {
+//  min-height: 100vh;
+//}
+
 
 /**
 =============== responsive font size
  */
+.title-font{
+  font-family: 'PP Monument Extended', 'sans-serif';
+}
 .tbase {
   font-size: 16px;
   line-height: 24px;
@@ -125,6 +129,30 @@ h1, h2, h3 {
     font-size: 18px;
     line-height: 28px;
   }
+}
+.t2{
+  font-size: 36px;
+  line-height: 36px;
+  @include media-breakpoint-up(xxl) {
+    font-size: 56px;
+    line-height: 56px;
+  }
+}
+.t3{
+  font-size: 20px;
+  line-height: 22px;
+  @include media-breakpoint-up(md) {
+    font-size: 24px;
+    line-height: 26px;
+  }
+  @include media-breakpoint-up(xxl) {
+    font-size: 28px;
+    line-height: 30px;
+  }
+}
+h1, h2, h3 {
+  @extend .title-font;
+  font-weight: 200;
 }
 
 body {
@@ -194,10 +222,12 @@ body {
   margin-bottom: $spacer*2;
 }
 
+$entry_indent : $spacer*4;
 .entry{
   padding-bottom: $spacer*5;
-  p{
-    padding-left: $spacer*4;
+  > p{
+    padding-left: $entry_indent;
+    margin-bottom: $spacer*2;
   }
 }
 /**
@@ -207,7 +237,34 @@ body {
   display: inline-flex;
   .label{
     display: block;
-    padding: 10px 10px 10px $spacer*4;
+    padding: 10px 10px 10px $entry_indent;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-top: solid 1px $azure_light;
+    color: $azure_light;
+    font-weight: bold;
+    @extend .title-font;
+    position: relative;
+    &:before{
+      content: '';
+      width: $entry_indent;
+      height: 4px;
+      background-color: $white;
+      left: 0;
+      top: -6px;
+      position: absolute;
+      opacity: 0.2;
+    }
+    &:after{
+      content: '';
+      width: 4px;
+      height: 4px;
+      background-color: $white;
+      left: -7px;
+      top: -6px;
+      position: absolute;
+      opacity: 0.2;
+    }
   }
   svg{
     width: 48px;
@@ -219,6 +276,130 @@ body {
   }
 }
 
+.main-title{
+  text-transform: uppercase;
+  @extend .t2;
+  margin-bottom: $spacer*2;
+}
+/**
+=== simple list
+ */
+.simple-list{
+  list-style: none;
+  margin: 0 0 $spacer*2 0;
+  padding: 0;
+  li{
+    padding-left: $entry_indent;
+    margin-bottom: $spacer;
+    display: flex;
+    align-items: flex-start;
+    svg{
+      fill: $azure_light;
+      width: 17px;
+      height: auto;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+    span{
+      display: block;
+    }
+  }
+}
+
+/**
+=== teaser 1
+ */
+.teaser-list-1{
+  padding-bottom: $spacer*2;
+  @extend .row;
+  .teaser{
+    padding: $spacer;
+
+
+    display: flex;
+
+    svg{
+      fill: $azure_light;
+      width: 100%;
+      height: auto;
+      @include media-breakpoint-up(sm) {
+        width: 300px;
+        height: auto;
+        margin-right: 5px;
+      }
+    }
+
+    .teaser-entry{
+
+      h4{
+        @extend .t3;
+        @extend .title-font;
+        padding: $spacer 0 $spacer $entry_indent/2;
+        border-left: solid 4px $azure_light;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: $azure_light;
+      }
+      p{
+        padding-left: $entry_indent/2+4px;
+      }
+    }
+  }
+}
+/**
+=== teaser 2
+ */
+.teaser-list-2{
+  padding-bottom: $spacer*2;
+  @include media-breakpoint-up(md) {
+    padding-top: 30vh;
+  }
+
+  .teaser{
+    @include media-breakpoint-up(sm) {
+      display: flex;
+    }
+    padding-bottom: $spacer*4;
+
+    svg{
+      fill: $azure_light;
+      width: 50%;
+      height: auto;
+      @include media-breakpoint-up(sm) {
+        width: 300px;
+        height: auto;
+        margin-right: 5px;
+      }
+    }
+
+    .teaser-entry{
+      h3{
+        @extend .t2;
+        @extend .title-font;
+        padding: $spacer*2 0 $spacer*2 $entry_indent/2+4px;
+        text-transform: uppercase;
+        font-weight: 200;
+        color: $white;
+      }
+      h4{
+        @extend .t3;
+        @extend .title-font;
+        padding: $spacer 0 $spacer $entry_indent/2;
+        border-left: solid 4px $azure_light;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: $azure_light;
+      }
+      p{
+        padding-left: $entry_indent/2+9px;
+      }
+    }
+    .teaser-header{
+      border-left: solid 1px $white;
+      padding-left: 5px;
+    }
+  }
+}
 /**
 1
 2

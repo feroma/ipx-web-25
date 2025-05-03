@@ -10,7 +10,7 @@
           v-for="(section) in loadedPageData.page.sections"
           :key="'section-'+section.id"
           :is="getComponentName(section.layout)"
-          :sectionId="section.id+''"
+          :id="section.id+''"
           :data-section-id="section.id+''"
           class="section-wrapper"
           :class=section.class
@@ -158,8 +158,10 @@ const cleanupScrollTriggers = () => {
 onMounted(() => {
   if (process.client) {
     console.log('MOUNTED')
+    setTimeout(() => {
+      _initScrollTrigger()
+    },1000)
 
-    _initScrollTrigger()
   }
 })
 
