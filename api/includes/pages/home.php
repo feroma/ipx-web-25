@@ -246,7 +246,7 @@ $section3 = [
 											'html' => 'Data centralization and AI-guided analysis allows the accurate monitoring of students’ educational paths. 
 											The iPerformX Suite facilitates early intervention to prevent critical issues and avoid failures and dropouts. 
 											AI recommendations and guidance ensure adherence to timelines and preparation standards.',
-											'class' => 'col-sm-7'
+											'class' => 'col-md-50perc'
 										],
 									],
 									[
@@ -255,7 +255,7 @@ $section3 = [
 											'html' => 'Smart multimedia tools, always accessible to all students, create a comprehensive and personalized educational journey, 
 											fostering a strong motivation for self-learning.
 											AI-generated learning paths, supervised by Instructors, provide guidance to each student at every stage of their training experience.',
-											'class' => 'col-sm-7'
+											'class' => 'col-md-50perc'
 										],
 									],
 
@@ -368,13 +368,169 @@ $section4 = [
 	],
 ];
 
+$section5 = [
+	'id' => 'vte-2',
+	'container' => 'default',
+	'layout' => 'default',
+	'class' => 'section-standard',
+//	'container_class' => 'd-flex flex-column justify-content-center min-vh-100',
+	'rows' => [
+		[
+			'class' => 'align-items-center min-vh-100',
+			'columns' => [
+				[
+					'class' => 'offset-sm-1 col-sm-12',
+					//					'wrapper_class' => 'entry',
+					'widgets' => [
+						[
+							'component' => 'Pretitle',
+							'props' => [
+								'html' => 'The Virtual Training Environment / 2',
+							],
+						],
+						[
+							'component' => 'TeaserList3',
+							'props' => [
 
+								'items' => [
+									[
+										'props' => [
+											'summary' => 'Remote Instruction',
+											'title' => 'Increase learning success',
+											'html' => 'Instructors can guide you live, from anywhere in the world.',
+											'class' => 'col-md-33perc pr-md-5'
+										],
+									],
+									[
+										'props' => [
+											'summary' => 'Better preparation',
+											'title' => 'Targeted Remediation',
+											'html' => 'AI identifies areas for improvement and suggests next steps for progress.',
+											'class' => 'col-md-33perc pr-md-5'
+										],
+									],
+									[
+										'props' => [
+											'summary' => 'Augment learning',
+											'title' => 'Intelligent Tutoring',
+											'html' => 'AI provides real-time suggestions to learn while simulating.',
+											'class' => 'col-md-33perc pr-md-5'
+										],
+									],
+
+
+								],
+							],
+
+						],
+						[
+							'component' => 'Cta',
+							'props' => [
+								'html' => 'simulation models...',
+								'href' => '#simulation-models',
+							],
+
+						],
+
+					],////WIDGETS
+				],
+
+
+			],
+		],
+
+
+
+	],
+];
+$section7 = [
+	'id' => 'simulation-models-coming-soon',
+	'container' => 'default',
+	'layout' => 'default',
+	'class' => 'section-standard',
+	//	'container_class' => 'd-flex flex-column justify-content-center min-vh-100',
+	'rows' => [
+		[
+			'class' => 'py-5',
+			'columns' => [
+				[
+					'class' => 'offset-sm-1 col-sm-12',
+					//					'wrapper_class' => 'entry',
+					'widgets' => [
+						[
+							'component' => 'MainTitle',
+							'props' => [
+								'html' => 'coming soon...',
+							],
+						],
+						[
+							'component' => 'TeaserList4',
+							'props' => [
+
+								'items' => [
+									[
+										'props' => [
+											'title' => 'C-172',
+											'class' => 'col-md-20perc'
+										],
+									],
+									[
+										'props' => [
+											'title' => 'pa-28',
+											'class' => 'col-md-20perc'
+										],
+									],
+									[
+										'props' => [
+											'title' => 'DA-20',
+											'class' => 'col-md-20perc'
+										],
+									],
+									[
+										'props' => [
+											'title' => 'DA-40',
+											'class' => 'col-md-20perc'
+										],
+									],
+									[
+										'props' => [
+											'title' => 'DA-42',
+											'class' => 'col-md-20perc'
+										],
+									],
+
+								],
+							],
+
+						],
+						[
+							'component' => 'Cta',
+							'props' => [
+								'html' => 'our new lightweight ITD...',
+								'href' => '#eitd',
+							],
+
+						],
+
+					],////WIDGETS
+				],
+
+
+			],
+		],
+
+
+
+	],
+];
 $page     = [
 	"sections" => [
 		$section1,
 		$section2,
 		$section3,
 		$section4,
+		$section5,
+		$section7
 	],
 	'meta' => [
 		'title' => 'Mission XR',
