@@ -5061,7 +5061,7 @@ body {
 /**
 =============== responsive font size
  */
-.title-font, h1, h2, h3, .cta-button .label, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h3, .teaser-list-2 .teaser .teaser-entry h4, .teaser-list-3 .teaser h3, .teaser-list-3 .teaser h4, .teaser-list-4 .teaser h3, .v-tabs-items-list li span {
+.title-font, h1, h2, h3, .cta-button .label, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h3, .teaser-list-2 .teaser .teaser-entry h4, .teaser-list-3 .teaser h3, .teaser-list-3 .teaser h4, .teaser-list-4 .teaser h3, .v-tabs-items-list li span, .accordion-container .accordion-header, .accordion-container .accordion-content h3 {
   font-family: 'PP Monument Extended', 'sans-serif'; }
 
 .tbase, body, .pretitle, .teaser-list-3 .teaser h4 {
@@ -5088,15 +5088,15 @@ body {
       font-size: 36px;
       line-height: 36px; } }
 
-.t3, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .teaser-list-4 .teaser h3, .v-tabs-items-list li span {
+.t3, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .teaser-list-4 .teaser h3, .v-tabs-items-list li span, .accordion-container .accordion-content h3 {
   font-size: 20px;
   line-height: 22px; }
   @media (min-width: 920px) {
-    .t3, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .teaser-list-4 .teaser h3, .v-tabs-items-list li span {
+    .t3, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .teaser-list-4 .teaser h3, .v-tabs-items-list li span, .accordion-container .accordion-content h3 {
       font-size: 24px;
       line-height: 26px; } }
   @media (min-width: 2550px) {
-    .t3, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .teaser-list-4 .teaser h3, .v-tabs-items-list li span {
+    .t3, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .teaser-list-4 .teaser h3, .v-tabs-items-list li span, .accordion-container .accordion-content h3 {
       font-size: 28px;
       line-height: 30px; } }
 
@@ -5397,8 +5397,89 @@ h1, h2, h3 {
   z-index: 10; }
 
 /**
-  ====
+  ==== accordion
    */
+.accordion-1 .main-title {
+  margin-bottom: 60px; }
+.accordion-1 .v-tabs-items-content svg {
+  margin-left: -60px; }
+
+.accordion-container {
+  margin-bottom: 60px; }
+  .accordion-container .accordion-header {
+    padding: 15px 0;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ACD1E9;
+    font-weight: 400;
+    position: relative;
+    opacity: 0.5;
+    transition: opacity 0.4s;
+    cursor: pointer; }
+    .accordion-container .accordion-header:before {
+      content: '';
+      width: 60px;
+      height: 4px;
+      background-color: #ACD1E9;
+      left: 0;
+      top: 0px;
+      position: absolute;
+      opacity: 1; }
+    .accordion-container .accordion-header:after {
+      content: '';
+      width: 0;
+      height: 1px;
+      background-color: #fff;
+      left: 60px;
+      top: -2px;
+      position: absolute;
+      opacity: 0;
+      transition: all 0.4s; }
+    .accordion-container .accordion-header.active {
+      opacity: 1; }
+      .accordion-container .accordion-header.active:after {
+        width: 120px;
+        left: -60px;
+        opacity: 1; }
+  .accordion-container .accordion-content {
+    padding-left: 60px;
+    margin-bottom: 30px; }
+    .accordion-container .accordion-content h3 {
+      padding: 0 0 15px 0;
+      text-transform: uppercase;
+      font-weight: 200;
+      color: #fff; }
+
+/* Stili di base - Puoi personalizzarli o rimuoverli se gestisci gli stili altrove */
+/*.accordion-container {*/
+/*  width: 100%;*/
+/*}*/
+/*.accordion-item {*/
+/*  margin-bottom: 10px;*/
+/*  border: 1px solid #ddd;*/
+/*  border-radius: 4px;*/
+/*}*/
+/*.accordion-header {*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*  align-items: center;*/
+/*  padding: 15px;*/
+/*  cursor: pointer;*/
+/*  //background-color: #f5f5f5;*/
+/*}*/
+/*.accordion-header.active {*/
+/*  background-color: #ff0000;*/
+/*}*/
+/*.accordion-icon {*/
+/*  font-size: 18px;*/
+/*  font-weight: bold;*/
+/*}*/
+/*.accordion-content {*/
+/*  transition: height 0.4s ease;*/
+/*}*/
+/*.accordion-content-inner {*/
+/*  padding: 0 15px 15px;*/
 /**
 1
 2

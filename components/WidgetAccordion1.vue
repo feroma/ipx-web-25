@@ -2,7 +2,13 @@
   <div class="accordion-1">
     <div class="row">
       <!--      ///////////////////////image-->
-      <div class="col-md-6">
+      <div class="col-md-6 d-flex align-items-center overflow-hidden">
+        <div  class="v-tabs-items-content">
+          <svg width="852" height="735" viewBox="0 0 852 735" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M626.953 735L6 735C2.68629 735 0 732.314 0 729L0 6C0 2.68629 2.68627 0 5.99998 0L846 0C849.314 0 852 2.6863 852 6L852 509.729C852 517.68 848.844 525.305 843.225 530.93L648.179 726.201C642.552 731.835 634.916 735 626.953 735Z"/>
+          </svg>
+        </div>
+
       </div>
       <!--      /////////////////////// / image-->
       <!--      ///////////////////////list-->
@@ -14,6 +20,8 @@
               v-for="(item, index) in items"
               :key="index"
               class="accordion-item"
+              :ref="el => { if (el) accordionItemRefs[index] = el }"
+              :id="`accordion-section-${index}`"
           >
             <!-- Header dell'accordion -->
             <div
@@ -22,9 +30,9 @@
                 :class="{ 'active': activeIndices.includes(index) }"
             >
               <div class="accordion-title">{{ item.title }}</div>
-              <div class="accordion-icon">
+<!--              <div class="accordion-icon">
                 {{ activeIndices.includes(index) ? '−' : '+' }}
-              </div>
+              </div>-->
             </div>
 
             <!-- Contenuto dell'accordion -->
@@ -50,8 +58,12 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, nextTick } from 'vue';
+import { ref, onMounted, watch, nextTick, onUnmounted } from 'vue';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// Registra il plugin ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
 
 // Props
 const props = defineProps({
@@ -70,7 +82,22 @@ const props = defineProps({
   },
   initialOpenIndex: {
     type: [Number, Array],
-    default: null
+    default: 0
+  },
+  // Se true, le sezioni si apriranno automaticamente durante lo scroll
+  useScrollTrigger: {
+    type: Boolean,
+    default: false
+  },
+  // Opzione per attivare l'apertura sequenziale mentre si scorre
+  scrollSequential: {
+    type: Boolean,
+    default: false
+  },
+  // Percentuale della sezione che deve essere visibile prima di attivarla (0-1)
+  scrollThreshold: {
+    type: Number,
+    default: 0.7
   }
 });
 const items = computed(() => {
@@ -82,31 +109,12 @@ const items = computed(() => {
   return response
 
 })
+
 // Refs
 const contentRefs = ref([]);
+const accordionItemRefs = ref([]);
 const activeIndices = ref([]);
-
-// Inizializzazione
-onMounted(() => {
-  // Inizializza gli elementi aperti
-  if (props.initialOpenIndex !== null) {
-    if (Array.isArray(props.initialOpenIndex)) {
-      activeIndices.value = [...props.initialOpenIndex];
-    } else {
-      activeIndices.value = [props.initialOpenIndex];
-    }
-
-    // Aspetta il prossimo ciclo di rendering per animare gli elementi inizialmente aperti
-    nextTick(() => {
-      activeIndices.value.forEach(index => {
-        if (contentRefs.value[index]) {
-          const contentHeight = contentRefs.value[index].scrollHeight;
-          gsap.set(contentRefs.value[index], { height: contentHeight });
-        }
-      });
-    });
-  }
-});
+const scrollTriggers = ref([]);
 
 // Funzione per aprire/chiudere l'accordion
 const toggleAccordion = async (index) => {
@@ -118,7 +126,7 @@ const toggleAccordion = async (index) => {
     await gsap.to(contentRefs.value[index], {
       height: 0,
       duration: 0.4,
-      ease: "ease.out"
+      ease: "power1.inOut"
     });
 
     // Rimuoviamo l'indice dalla lista degli attivi
@@ -134,7 +142,7 @@ const toggleAccordion = async (index) => {
               gsap.to(contentRefs.value[activeIndex], {
                 height: 0,
                 duration: 0.4,
-                ease: "power2.out"
+                ease: "power1.inOut"
               })
           )
       );
@@ -153,10 +161,58 @@ const toggleAccordion = async (index) => {
         {
           height: contentRefs.value[index].scrollHeight,
           duration: 0.4,
-          ease: "power2.out"
+          ease: "power1.inOut"
         }
     );
   }
+};
+
+// Inizializzazione ScrollTrigger per ciascuna sezione dell'accordion
+const initScrollTriggers = () => {
+
+
+
+  console.log('initScrollTriggers')
+  // Prima rimuoviamo eventuali trigger esistenti
+  killScrollTriggers();
+  const isMobile = window.innerWidth < 768; // 768px è solitamente il breakpoint per tablet/mobile
+
+  // Se è un dispositivo mobile, esci dalla funzione senza creare gli ScrollTrigger
+  if (isMobile) return;
+
+  if (!props.useScrollTrigger) return;
+
+  // Creiamo un trigger per ogni elemento dell'accordion
+  accordionItemRefs.value.forEach((item, index) => {
+    if (!item) return;
+
+    const trigger = ScrollTrigger.create({
+      trigger: item,
+      start: `top ${props.scrollThreshold * 100}%`,
+      end: `bottom ${props.scrollThreshold * 100}%`,
+      onEnter: () => handleScrollEnter(index),
+      onEnterBack: props.scrollSequential ? null : () => handleScrollEnter(index),
+      markers: true, // Imposta a true per debug
+    });
+
+    scrollTriggers.value.push(trigger);
+  });
+};
+
+// Gestisce l'attivazione di una sezione durante lo scroll
+const handleScrollEnter = (index) => {
+  // Se non è attivo, lo attiviamo
+  if (!activeIndices.value.includes(index)) {
+    toggleAccordion(index);
+  }
+};
+
+// Rimuove tutti gli ScrollTrigger
+const killScrollTriggers = () => {
+  scrollTriggers.value.forEach(trigger => {
+    if (trigger) trigger.kill();
+  });
+  scrollTriggers.value = [];
 };
 
 // Aggiorna l'altezza degli elementi attivi quando il contenuto cambia
@@ -167,48 +223,51 @@ watch(() => props.items, async () => {
       gsap.to(contentRefs.value[index], {
         height: contentRefs.value[index].scrollHeight,
         duration: 0.4,
-        ease: "power2.out"
+        ease: "power1.inOut"
       });
     }
   });
+
+  // Ricrea i trigger dopo che il contenuto è cambiato
+  initScrollTriggers();
 }, { deep: true });
+
+// Watch per riconfigurare i trigger se le opzioni di scroll cambiano
+watch(() => [props.useScrollTrigger, props.scrollSequential, props.scrollThreshold], () => {
+  initScrollTriggers();
+});
+
+// Inizializzazione
+onMounted(async () => {
+  // Inizializza gli elementi aperti
+  if (props.initialOpenIndex !== null) {
+    if (Array.isArray(props.initialOpenIndex)) {
+      activeIndices.value = [...props.initialOpenIndex];
+    } else {
+      activeIndices.value = [props.initialOpenIndex];
+    }
+
+    // Aspetta il prossimo ciclo di rendering per animare gli elementi inizialmente aperti
+    await nextTick();
+    activeIndices.value.forEach(index => {
+      if (contentRefs.value[index]) {
+        const contentHeight = contentRefs.value[index].scrollHeight;
+        gsap.set(contentRefs.value[index], { height: contentHeight });
+      }
+    });
+  }
+
+  // Inizializza ScrollTrigger dopo che il DOM è completamente renderizzato
+  await nextTick();
+  initScrollTriggers();
+});
+
+// Cleanup degli ScrollTrigger quando il componente viene distrutto
+onUnmounted(() => {
+  killScrollTriggers();
+});
 </script>
 
 <style scoped>
-/* Stili di base - Puoi personalizzarli o rimuoverli se gestisci gli stili altrove */
-.accordion-container {
-  width: 100%;
-}
 
-.accordion-item {
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.accordion-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  cursor: pointer;
-  //background-color: #f5f5f5;
-}
-
-.accordion-header.active {
-  background-color: #ff0000;
-}
-
-.accordion-icon {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.accordion-content {
-  transition: height 0.4s ease;
-}
-
-.accordion-content-inner {
-  padding: 0 15px 15px;
-}
 </style>

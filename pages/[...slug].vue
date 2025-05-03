@@ -134,7 +134,7 @@ const _initScrollTrigger = async () => {
             start: 'top center',
             end: 'bottom center',
             toggleActions: 'restart reverse restart reverse',
-            markers: true,
+            //markers: true,
             onEnter: () => {
               const sectionId = section.getAttribute('data-section-id')
               updateCurrentSection(sectionId)
