@@ -70,7 +70,7 @@ const getComponentName = (widgetName) => {
   <section :class="isActive? 'active':'inactive'">
 
 
-    <div class="container">
+    <div class="container" :class="section.container_class || ''">
       <div
           v-for="(row, row_count) in section.rows"
           :key="'row-'+row_count"
