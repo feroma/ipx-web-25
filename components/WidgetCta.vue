@@ -1,7 +1,7 @@
 <template>
   <a
       :href="href"
-      :class="['cta-button', customClass]"
+      :class="['cta-button']"
       @click="handleClick"
       :target="isExternalLink ? '_blank' : null"
       :rel="isExternalLink ? 'noopener noreferrer' : null"
@@ -9,11 +9,13 @@
   >
 
     <span class="label" v-html="filteredHtml"></span>
+
     <svg v-if="isAnchorLink"
         viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M24.1716 46H12C10.8954 46 10 45.1046 10 44V4C10 2.89543 10.8954 2 12 2H35C36.1046 2 37 2.89543 37 4V33.1716C37 33.702 36.7893 34.2107 36.4142 34.5858L25.5858 45.4142C25.2107 45.7893 24.702 46 24.1716 46Z"/>
       <path d="M23 20.5V40L30 33" stroke-linecap="round"/>
     </svg>
+
   </a>
 
 </template>

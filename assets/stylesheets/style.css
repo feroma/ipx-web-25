@@ -5061,14 +5061,14 @@ body {
 /**
 =============== responsive font size
  */
-.title-font, h1, h2, h3, .cta-button .label, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h3, .teaser-list-2 .teaser .teaser-entry h4, .teaser-list-3 .teaser h3, .teaser-list-3 .teaser h4, .teaser-list-4 .teaser h3, .v-tabs-items-list li span, .accordion-container .accordion-header, .accordion-container .accordion-content h3 {
+.title-font, h1, h2, h3, .cta-button .label, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h3, .teaser-list-2 .teaser .teaser-entry h4, .teaser-list-3 .teaser h3, .teaser-list-3 .teaser h4, .teaser-list-4 .teaser h3, .v-tabs-items-list li span, .accordion-container .accordion-header, .accordion-container .accordion-content h3, .main-button .label {
   font-family: 'PP Monument Extended', 'sans-serif'; }
 
-.tbase, body, .pretitle, .teaser-list-3 .teaser h4 {
+.tbase, body, .pretitle, .teaser-list-3 .teaser h4, .main-button .label {
   font-size: 16px;
   line-height: 24px; }
   @media (min-width: 2550px) {
-    .tbase, body, .pretitle, .teaser-list-3 .teaser h4 {
+    .tbase, body, .pretitle, .teaser-list-3 .teaser h4, .main-button .label {
       font-size: 18px;
       line-height: 28px; } }
 
@@ -5088,15 +5088,15 @@ body {
       font-size: 36px;
       line-height: 36px; } }
 
-.t3, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .teaser-list-4 .teaser h3, .v-tabs-items-list li span, .accordion-container .accordion-content h3 {
+.t3, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .teaser-list-4 .teaser h3, .v-tabs-items-list li span, .accordion-container .accordion-content h3, .main-button-wrapper h2 {
   font-size: 20px;
   line-height: 22px; }
   @media (min-width: 920px) {
-    .t3, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .teaser-list-4 .teaser h3, .v-tabs-items-list li span, .accordion-container .accordion-content h3 {
+    .t3, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .teaser-list-4 .teaser h3, .v-tabs-items-list li span, .accordion-container .accordion-content h3, .main-button-wrapper h2 {
       font-size: 24px;
       line-height: 26px; } }
   @media (min-width: 2550px) {
-    .t3, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .teaser-list-4 .teaser h3, .v-tabs-items-list li span, .accordion-container .accordion-content h3 {
+    .t3, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .teaser-list-4 .teaser h3, .v-tabs-items-list li span, .accordion-container .accordion-content h3, .main-button-wrapper h2 {
       font-size: 28px;
       line-height: 30px; } }
 
@@ -5115,6 +5115,20 @@ h1, h2, h3 {
     width: 100%;
     height: auto; }
   #mxr-logo path {
+    fill: #fff; }
+
+#ipx-logo {
+  position: relative;
+  margin-bottom: 15px; }
+  #ipx-logo h2 {
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    position: absolute; }
+  #ipx-logo svg {
+    width: 50%;
+    height: auto; }
+  #ipx-logo path {
     fill: #fff; }
 
 /**
@@ -5450,6 +5464,43 @@ h1, h2, h3 {
       text-transform: uppercase;
       font-weight: 200;
       color: #fff; }
+
+/**
+=== Main Button
+ */
+.main-button-wrapper {
+  padding-top: 60px;
+  overflow: hidden; }
+  .main-button-wrapper h2 {
+    margin-bottom: 15px; }
+
+.main-button {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 30px;
+  border-radius: 3px; }
+  .main-button .label {
+    color: #001432;
+    font-weight: bold;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 2;
+    margin-right: 15px; }
+  .main-button .icon {
+    position: relative;
+    z-index: 2;
+    margin-right: 15px; }
+  .main-button .bg {
+    fill: #ACD1E9;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 300%;
+    height: auto; }
 
 /* Stili di base - Puoi personalizzarli o rimuoverli se gestisci gli stili altrove */
 /*.accordion-container {*/
