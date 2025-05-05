@@ -1,10 +1,10 @@
 <template>
   <!-- LOAD: {{loading}}-->
 
-  <div v-if="loadedPageData.page && pageData">
+  <div v-if="loadedPageData && loadedPageData.page">
     <SidebarNavigator
         v-if="loadedPageData.page.sections"
-        :sections="loadedPageData.page.sections" />
+        :sections="loadedPageData.page.sections"/>
     <!--        <h1-title :title="pageData.title"></h1-title>-->
     <div class="sections" v-if="loadedPageData.page.sections">
 
@@ -68,6 +68,7 @@ const findPageData = () => {
   }
 }
 const pageData = computed(findPageData)
+
 // Funzione per determinare quale componente usare
 const getComponentName = (layout) => {
   // console.log('Layout:', layout)
@@ -123,12 +124,12 @@ const _initScrollTrigger = async () => {
     // Animazione di entrata
     gsap.fromTo(section,
         {
-          opacity: 0,
-         // x: 50
+          opacity: 0
+          // x: 50
         },
         {
           opacity: 1,
-         // x: 0,
+          // x: 0,
           duration: 0.4,
           scrollTrigger: {
             trigger: section,
@@ -178,7 +179,6 @@ watch(currentSectionId, (newSectionId) => {
   } else {
     console.log('No Sezione corrente')
   }
-
 })
 
 </script>

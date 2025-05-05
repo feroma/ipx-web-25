@@ -73,23 +73,7 @@ function website_main_data() {
 			"1" => [
 				"title" => 'Welcome',
 				"body" => 'Welcome to our new site',
-				"sections" => [
-					'1' => [
-						"title" => 'First Section',
-						"body" => 'This is the first section',
-						"layout" => 'default',
-					],
-					'2' => [
-						"title" => 'Second Section',
-						"body" => 'This is the second section',
-						"layout" => 'default',
-					],
-					'3' => [
-						"title" => 'Third Section',
-						"body" => 'No layout specified',
-					],
-
-				],
+				"sections" => [],
 			],
 			"2" => [
 				"title" => 'About us',

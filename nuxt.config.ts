@@ -5,7 +5,11 @@ export default defineNuxtConfig({
 
     // Metodo più recente per impostare il base URL
     app: {
-        baseURL: '/ipx/mxr/'
+      //  baseURL: '/ipx/mxr/'
+        baseURL: process.env.NODE_ENV === 'production'
+            ? '/ipx/mxr/'
+            : '/',
+
     },
     devtools: { enabled: process.env.NODE_ENV !== 'production'},
 
@@ -17,7 +21,11 @@ export default defineNuxtConfig({
     runtimeConfig: {
         public: {
             //apiBase: process.env.API_BASE || 'https://localhost/ipx-web-24/index.php'
-            apiBase:  process.env.API_BASE || 'http://data-ipx.local'
+            //apiBase:  process.env.API_BASE || 'http://data-ipx.local'
+
+            apiBase: process.env.NODE_ENV === 'production' || true
+                ? 'https://www.stage72.info/ipx/mxr/api/index.php'
+                : 'http://data-ipx.local'
         },
 
         // pages: {
@@ -34,5 +42,8 @@ export default defineNuxtConfig({
     modules: [
        // '@pinia/nuxt',
         '@nuxt/image'
-    ]
+    ],
+    build: {
+        transpile: ['gsap']
+    }
 })

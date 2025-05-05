@@ -5,6 +5,7 @@ $section1 = [
 	'container' => 'default',
 	'layout' => 'default',
 	'class' => 'section-standard',
+	'menu_label' => 'Welcome',
 	'rows' => [
 		[
 			'class' => 'align-items-end min-vh-100',
@@ -59,6 +60,7 @@ $section2 = [
 	'container' => 'default',
 	'layout' => 'default',
 	'class' => 'section-standard',
+	'menu_label' => 'Uniqueness',
 	'rows' => [
 		[
 			'class' => 'align-items-center min-vh-100',
@@ -213,6 +215,7 @@ $section3 = [
 	'container' => 'default',
 	'layout' => 'default',
 	'class' => 'section-standard',
+	'menu_label' => 'Features',
 	'rows' => [
 		[
 			'class' => 'align-items-center min-vh-100',
@@ -287,6 +290,7 @@ $section4 = [
 	'container' => 'default',
 	'layout' => 'default',
 	'class' => 'section-standard',
+	'menu_label' => 'VTE',
 	'rows' => [
 		[
 			'class' => '',
@@ -448,6 +452,7 @@ $section7 = [
 	'container' => 'default',
 	'layout' => 'default',
 	'class' => 'section-standard',
+	'menu_label' => 'EITD',
 	//	'container_class' => 'd-flex flex-column justify-content-center min-vh-100',
 	'rows' => [
 		[

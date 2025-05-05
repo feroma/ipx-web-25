@@ -85,13 +85,15 @@ const getComponentName = (widgetName) => {
             :class=col.class
         >
           <div :class="col.wrapper_class || 'content-wrapper'">
+
+
             <component
                 v-for="(widget, content_count) in col.widgets"
                 :key="'widget-'+row_count+'-'+column_count+'-'+content_count"
                 :is="getComponentName(widget.component)"
                 :content="widget.props"/>
 
-            <!--          {{'col-'+column_count}}-->
+
           </div>
 
         </div>
