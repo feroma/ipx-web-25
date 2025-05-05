@@ -7,7 +7,7 @@ const props = defineProps({
   },
   sectionId: {
     type: String,
-    required: true
+    //required: true
   }
 
 })

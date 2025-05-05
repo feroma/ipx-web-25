@@ -7,6 +7,7 @@
     <div class="sections" v-if="loadedPageData.page.sections">
       <pretitle :content="'test'"></pretitle>
       <component
+          v-if="loadedPageData.page.sections"
           v-for="(section) in loadedPageData.page.sections"
           :key="'section-'+section.id"
           :is="getComponentName(section.layout)"
@@ -59,7 +60,6 @@ const findPageData = () => {
     updateCurrentPage(currentPage.id)
     console.log('currentPage', pages.value[currentPage.id])
     return currentPage
-
   } else {
     return null
   }
@@ -123,7 +123,7 @@ const _initScrollTrigger = async () => {
     gsap.fromTo(section,
         {
           opacity: 0,
-          y: 50
+         // x: 50
         },
         {
           opacity: 1,
