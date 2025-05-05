@@ -5,6 +5,7 @@ export const useAppState = () => {
     const state = useState('siteData', () => ({
         nav: [],
         pages: {},
+        config: {},
         currentPageId:null,
         currentSectionId:null,
     }))
@@ -24,6 +25,7 @@ export const useAppState = () => {
     return {
         nav: computed(() => state.value.nav),
         pages: computed(() => state.value.pages),
+        config: computed(() => state.value.config),
         currentPageId: computed(() => state.value.currentPageId),
         currentSectionId: computed(() => state.value.currentSectionId),
         updateState,

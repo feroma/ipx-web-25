@@ -154,6 +154,15 @@ body {
   }
 }
 
+.tsmall {
+  font-size: 11px;
+  line-height: 13px;
+  @include media-breakpoint-up(sm) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
 .t2 {
   font-size: 36px;
   line-height: 36px;
@@ -778,6 +787,57 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
     height: auto;
   }
 
+}
+
+/**
+============== disclaimer
+ */
+.blocks {
+  .block {
+    margin-right: $spacer*4;
+
+    h4 {
+      @extend .tbase;
+      @extend .title-font;
+      font-weight: bold;
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+}
+
+#contacts {
+  .blocks {
+    @include media-breakpoint-up(md) {
+      margin-right: $spacer*4;
+    }
+  }
+}
+
+.disclaimer {
+  opacity: 0.5;
+
+  p {
+    margin: 0;
+    padding: $spacer*2;
+    @extend .tsmall;
+    border-left: solid 1px $white;
+
+  }
+
+  img {
+    max-width: 100px;
+    @include media-breakpoint-up(md) {
+      max-width: 200px;
+    }
+
+    height: auto;
+    margin-right: $spacer;
+  }
 }
 
 /**

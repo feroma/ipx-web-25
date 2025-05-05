@@ -1,11 +1,13 @@
 <template>
-<!-- LOAD: {{loading}}-->
+  <!-- LOAD: {{loading}}-->
 
   <div v-if="loadedPageData.page && pageData">
-
-<!--        <h1-title :title="pageData.title"></h1-title>-->
+    <SidebarNavigator
+        v-if="loadedPageData.page.sections"
+        :sections="loadedPageData.page.sections" />
+    <!--        <h1-title :title="pageData.title"></h1-title>-->
     <div class="sections" v-if="loadedPageData.page.sections">
-      <pretitle :content="'test'"></pretitle>
+
       <component
           v-if="loadedPageData.page.sections"
           v-for="(section) in loadedPageData.page.sections"
@@ -17,13 +19,14 @@
           :class=section.class
           :section="section"/>
     </div>
+
   </div>
 </template>
 
 <script setup>
 const {fetchData} = useApi()
 const route = useRoute()
-const {pages, nav, updateState, updateCurrentPage} = useAppState()
+const {pages, nav, config, updateState, updateCurrentPage} = useAppState()
 
 const loading = ref(false)
 const error = ref(null)
@@ -35,7 +38,7 @@ const loadPageData = async () => {
     loading.value = true
     return await fetchData({
       action: 'get_page',
-      data: { slug: route.path }
+      data: {slug: route.path}
     })
 
 
@@ -78,8 +81,6 @@ const getComponentName = (layout) => {
 }
 
 
-
-
 /**
  * ----------------gsap
  */
@@ -116,9 +117,9 @@ const {updateCurrentSection} = useAppState()
 }*/
 const _initScrollTrigger = async () => {
   const sections = document.querySelectorAll('.section-wrapper')
-  console.log('_initScrollTrigger',sections)
+  console.log('_initScrollTrigger', sections)
   await nextTick()
-  sections.forEach((section) => {
+  sections.forEach((section, index) => {
     // Animazione di entrata
     gsap.fromTo(section,
         {
@@ -127,14 +128,14 @@ const _initScrollTrigger = async () => {
         },
         {
           opacity: 1,
-          y: 0,
-          duration: 1,
+         // x: 0,
+          duration: 0.4,
           scrollTrigger: {
             trigger: section,
             start: 'top center',
             end: 'bottom center',
             toggleActions: 'restart reverse restart reverse',
-            //markers: true,
+            //markers: {startColor: "white", endColor: "cyan", fontSize: "11px",  indent: 100},
             onEnter: () => {
               const sectionId = section.getAttribute('data-section-id')
               updateCurrentSection(sectionId)
@@ -160,7 +161,7 @@ onMounted(() => {
     console.log('MOUNTED')
     setTimeout(() => {
       _initScrollTrigger()
-    },1000)
+    }, 1000)
 
   }
 })
@@ -172,9 +173,9 @@ onUnmounted(() => {
 })
 const {currentSectionId} = useAppState()
 watch(currentSectionId, (newSectionId) => {
-  if(newSectionId){
+  if (newSectionId) {
     console.log('Sezione corrente:', newSectionId)
-  }else{
+  } else {
     console.log('No Sezione corrente')
   }
 

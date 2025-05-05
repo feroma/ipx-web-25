@@ -1,30 +1,38 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 // @ts-ignore
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
-  devtools: { enabled: true },
+    compatibilityDate: '2024-04-03',
 
-  css: [
-    '~/assets/stylesheets/style.css'
-  ],
+    // Metodo più recente per impostare il base URL
+    app: {
+        baseURL: '/ipx/mxr/'
+    },
+    devtools: { enabled: process.env.NODE_ENV !== 'production'},
 
-  //ssr: true,
-  runtimeConfig: {
-    public: {
-      //apiBase: process.env.API_BASE || 'https://localhost/ipx-web-24/index.php'
-      apiBase: 'http://data-ipx.local'
+    css: [
+        '~/assets/stylesheets/style.css'
+    ],
+
+    //ssr: true,
+    runtimeConfig: {
+        public: {
+            //apiBase: process.env.API_BASE || 'https://localhost/ipx-web-24/index.php'
+            apiBase:  process.env.API_BASE || 'http://data-ipx.local'
+        },
+
+        // pages: {
+        //   '/': './pages/index.vue',
+        //   '/**': './pages/[...slug].vue'
+        // },
+        ErrorPage: {
+            // Disabilita la pagina 404 di default
+            display: false
+        },
+
     },
 
-    // pages: {
-    //   '/': './pages/index.vue',
-    //   '/**': './pages/[...slug].vue'
-    // },
-    ErrorPage: {
-      // Disabilita la pagina 404 di default
-      display: false
-    },
-
-  },
-
-  modules: ['@pinia/nuxt']
+    modules: [
+       // '@pinia/nuxt',
+        '@nuxt/image'
+    ]
 })
