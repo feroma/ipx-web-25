@@ -6,6 +6,10 @@
         v-if="loadedPageData.page.sections"
         :sections="loadedPageData.page.sections"/>
     <!--        <h1-title :title="pageData.title"></h1-title>-->
+
+    <SiteBg v-if="loadedPageData.page.sections"
+                :sections="loadedPageData.page.sections"/>
+
     <div class="sections" v-if="loadedPageData.page.sections">
 
       <component

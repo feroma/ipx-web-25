@@ -74,14 +74,14 @@ const getComponentName = (widgetName) => {
       <div
           v-for="(row, row_count) in section.rows"
           :key="'row-'+row_count"
-          :id="'row-'+row_count"
+          :id="'row-'+section.id+'-'+row_count"
           class="row"
           :class="row.class || ''"
       >
         <div
             v-for="(col, column_count) in row.columns"
-            :key="'col-'+row_count+'-'+column_count"
-            :id="'col-'+column_count"
+            :key="'col-'+section.id+'-'+row_count+'-'+column_count"
+            :id="'col-'+section.id+'-'+column_count"
             :class=col.class
         >
           <div :class="col.wrapper_class || 'content-wrapper'">
@@ -89,7 +89,7 @@ const getComponentName = (widgetName) => {
 
             <component
                 v-for="(widget, content_count) in col.widgets"
-                :key="'widget-'+row_count+'-'+column_count+'-'+content_count"
+                :key="'widget-'+section.id+'-'+row_count+'-'+column_count+'-'+content_count"
                 :is="getComponentName(widget.component)"
                 :content="widget.props"/>
 

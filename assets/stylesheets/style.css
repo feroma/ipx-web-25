@@ -5009,7 +5009,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: #000 !important; }
 
 body {
-  background-color: #000;
+  background-color: #001432;
   color: #fff;
   font-family: "Wix Madefor Text", sans-serif;
   background-repeat: no-repeat;
@@ -5018,7 +5018,6 @@ body {
 
 .section-wrapper {
   display: flex;
-  background-color: #001432;
   opacity: 0;
   /* Stato iniziale nascosto */
   transition: all 0.4s;
@@ -5037,8 +5036,66 @@ body {
       border: solid 1px $debug_bg;
     }
   }*/ }
-  .section-wrapper.active {
-    background-color: #001432; }
+
+.sections {
+  position: relative;
+  z-index: 2; }
+
+.site-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1; }
+  .site-bg .section-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s; }
+    .site-bg .section-bg img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover; }
+    .site-bg .section-bg.active {
+      opacity: 1; }
+
+.bg-blur {
+  background-color: rgba(0, 20, 50, 0.2);
+  backdrop-filter: blur(25px); }
+
+/**
+-----------------------------------------
+ */
+.panels-1 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  margin-left: 45px; }
+
+.panel-1, .panel-1b {
+  width: 54%;
+  height: 54%;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.panel-1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url("../img/panel_bg_1.png");
+  background-position: right bottom; }
+
+.panel-1b {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-image: url("../img/panel_bg_1b.png");
+  background-position: left top; }
 
 /**
 -----------------------------------------
@@ -5262,6 +5319,14 @@ h1, h2, h3 {
           width: 300px;
           height: auto;
           margin-right: 5px; } }
+    .teaser-list-1 .teaser .teaser-image {
+      position: relative; }
+    .teaser-list-1 .teaser img {
+      max-width: 150px;
+      height: auto;
+      position: absolute;
+      top: 15px;
+      right: 15px; }
     .teaser-list-1 .teaser .teaser-entry h4 {
       padding: 15px 0 15px 30px;
       border-left: solid 4px #ACD1E9;
@@ -5270,6 +5335,63 @@ h1, h2, h3 {
       color: #ACD1E9; }
     .teaser-list-1 .teaser .teaser-entry p {
       padding-left: 34px; }
+
+/**
+=== teaser 1b
+ */
+.teaser-list-1b .teaser {
+  padding: 30px 60px 15px 0;
+  display: flex;
+  flex-direction: column; }
+  .teaser-list-1b .teaser img {
+    max-width: 150px;
+    height: auto; }
+  .teaser-list-1b .teaser .teaser-entry h4 {
+    padding: 15px 0 15px 30px;
+    border-left: solid 4px #fff;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #fff; }
+  .teaser-list-1b .teaser .teaser-entry p {
+    padding-left: 34px; }
+
+/**
+-----------------------------------------
+ */
+.panels-1 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  margin-left: 45px; }
+  .panels-1 .teaser {
+    position: absolute;
+    width: 100%; }
+
+.panel-1, .panel-1b {
+  width: 54%;
+  height: 54%;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.panel-1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url("../img/panel_bg_1.png");
+  background-position: right bottom; }
+  .panel-1 .teaser {
+    left: 0;
+    bottom: 0; }
+
+.panel-1b {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-image: url("../img/panel_bg_1b.png");
+  background-position: left top; }
+  .panel-1b .teaser {
+    left: 0;
+    top: 0; }
 
 /**
 === teaser 2
@@ -5294,6 +5416,14 @@ h1, h2, h3 {
           width: 300px;
           height: auto;
           margin-right: 5px; } }
+    .teaser-list-2 .teaser .teaser-image {
+      position: relative; }
+    .teaser-list-2 .teaser img {
+      max-width: 120px;
+      height: auto;
+      position: absolute;
+      top: 15px;
+      right: 15px; }
     .teaser-list-2 .teaser .teaser-entry h3 {
       padding: 30px 0 30px 34px;
       text-transform: uppercase;
@@ -5647,6 +5777,156 @@ h1, h2, h3 {
   .dots-container .dot.active .number {
     right: -22.5px;
     opacity: 1; }
+
+/**
+ ============================================================ header
+ */
+#header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; }
+
+#iperformx_header_logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 30px;
+  overflow: hidden;
+  display: flex;
+  /*.el-1{
+    overflow: hidden;
+    width: 305px;
+    transition: width 0.4s;
+  }
+  &.active{
+    .el-1{
+      width: 0;
+    }
+  }*/ }
+  #iperformx_header_logo path {
+    fill: #fff; }
+  #iperformx_header_logo svg {
+    height: 48px;
+    width: auto; }
+  #iperformx_header_logo .el-1 {
+    overflow: hidden; }
+
+.header_menu {
+  /**
+  ----------- over
+   */ }
+  .header_menu .main-menu, .header_menu .main-menu .menu-item {
+    height: 108px; }
+  .header_menu .main-menu {
+    display: flex;
+    position: absolute;
+    right: 15px;
+    top: 0;
+    transform: translateX(0%);
+    opacity: 1;
+    transition: all 1s; }
+    @media (max-width: 919.98px) {
+      .header_menu .main-menu {
+        display: none; } }
+    .header_menu .main-menu .menu-item {
+      opacity: 0;
+      padding: 15px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      .header_menu .main-menu .menu-item.active {
+        color: #ACD1E9;
+        padding-top: 11px;
+        border-top: solid 4px #ACD1E9; }
+  .header_menu.closed .main-menu {
+    transform: translateX(105%);
+    opacity: 0; }
+
+.header_icon {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  transform: translateX(105%);
+  opacity: 0;
+  transition: all 1s;
+  cursor: pointer; }
+  .header_icon.opened {
+    transform: translateX(0%);
+    opacity: 1; }
+
+#footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  width: 100%;
+  max-width: 1920px;
+  /* Applica la trasformazione alla maschera quando ├¿ l'ultima sezione */ }
+  #footer p {
+    position: absolute;
+    z-index: 20;
+    padding-left: 16vh;
+    font-size: 9px;
+    line-height: 0.8;
+    text-transform: uppercase;
+    opacity: 0.5;
+    letter-spacing: 0.2em;
+    left: 0;
+    bottom: 0; }
+  #footer svg {
+    z-index: 10;
+    width: 100%;
+    position: relative;
+    overflow: visible;
+    /* Permette alla maschera di essere visibile anche fuori dai limiti dell'SVG */ }
+  #footer path {
+    fill: #000; }
+  #footer .footer-mask rect {
+    height: 131px;
+    y: 0px;
+    /* Sposta il rettangolo verso il basso per ancorarsi in basso */
+    transition: all 0.3s ease; }
+  #footer .mask-reduced rect {
+    height: 37px !important;
+    y: 94px !important;
+    /* Sposta il rettangolo verso il basso per ancorarsi in basso */ }
+  #footer a {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    transform: translateX(0%);
+    opacity: 1;
+    transition: all 0.4s;
+    line-height: 1; }
+    #footer a span {
+      display: block;
+      color: #fff;
+      text-align: right;
+      text-transform: uppercase;
+      padding: 30px 15px; }
+    #footer a strong {
+      text-align: right;
+      display: block;
+      font-weight: bold;
+      color: #ACD1E9; }
+    #footer a svg {
+      height: 100%;
+      width: auto;
+      margin-right: 15px; }
+      #footer a svg path {
+        stroke: #ACD1E9;
+        fill: none; }
+  #footer.last a {
+    transform: translateX(100%);
+    opacity: 0; }
 
 /* Stili di base - Puoi personalizzarli o rimuoverli se gestisci gli stili altrove */
 /*.accordion-container {*/
