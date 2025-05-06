@@ -2,6 +2,7 @@
 header( "Access-Control-Allow-Origin:*" );
 header( "Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept" );
 header( 'Content-Type: application/json' );
+require_once( 'includes/config.php' );
 include( 'includes/log.php' );
 include( 'includes/functions.php' );
 $POST     = file_get_contents( "php://input" );
@@ -66,22 +67,17 @@ function website_main_data() {
 
 		"nav" => [
 			[ "id" => "1", "label" => 'homepage', "slug" => '/' ],
-			[ "id" => "2", "label" => 'About Us', "slug" => '/about-us' ],
-			[ "id" => "3", "label" => 'Contact', "slug" => '/contact' ],
+		],
+		"config" => [
+			'REPO_URL' => REPO_URL,
+			'COPYRIGHT' => '©2025,️iperformx.com | all rights reserved |  all content is protected and cannot be replicated without explicit authorization.',
+			'FOOTER_LINK' => 'Do you want<br>more info?<strong>BOOK A<br>DEMO now!</strong>'
 		],
 		"pages" => [
 			"1" => [
 				"title" => 'Welcome',
 				"body" => 'Welcome to our new site',
 				"sections" => [],
-			],
-			"2" => [
-				"title" => 'About us',
-				"body" => 'Here some information about our company',
-			],
-			"3" => [
-				"title" => 'Contact',
-				"body" => 'Let\'s keep in touch!',
 			],
 		],
 
