@@ -2,6 +2,8 @@
   <!-- LOAD: {{loading}}-->
 
   <div v-if="loadedPageData && loadedPageData.page">
+    <SiteHeader v-if="loadedPageData.page.sections"
+                :sections="loadedPageData.page.sections"/>
     <SidebarNavigator
         v-if="loadedPageData.page.sections"
         :sections="loadedPageData.page.sections"/>
@@ -22,8 +24,10 @@
           class="section-wrapper"
           :class=section.class
           :section="section"/>
-    </div>
 
+    </div>
+    <SiteFooter v-if="loadedPageData.page.sections"
+                :sections="loadedPageData.page.sections"/>
   </div>
 </template>
 
@@ -176,7 +180,9 @@ onUnmounted(() => {
     cleanupScrollTriggers()
   }
 })
+
 const {currentSectionId} = useAppState()
+let isLastSection = false
 watch(currentSectionId, (newSectionId) => {
   if (newSectionId) {
     console.log('Sezione corrente:', newSectionId)

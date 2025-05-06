@@ -23,7 +23,7 @@ export default defineNuxtConfig({
             //apiBase: process.env.API_BASE || 'https://localhost/ipx-web-24/index.php'
             //apiBase:  process.env.API_BASE || 'http://data-ipx.local'
 
-            apiBase: process.env.NODE_ENV === 'production' || true
+            apiBase: process.env.NODE_ENV === 'production'
                 ? 'https://www.stage72.info/ipx/mxr/api/index.php'
                 : 'http://data-ipx.local'
         },

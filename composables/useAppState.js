@@ -8,7 +8,9 @@ export const useAppState = () => {
         config: {},
         currentPageId:null,
         currentSectionId:null,
+        menuOpen:null,
     }))
+
 
     const updateState = (newData) => {
         state.value = newData
@@ -21,15 +23,24 @@ export const useAppState = () => {
     const updateCurrentSection = (sectionId) => {
         state.value.currentSectionId = sectionId
     }
-
+    const toggleMenuStatus = () => {
+        state.value.menuOpen = !state.value.menuOpen
+    }
+    const changeMenuStatus = (status) => {
+        state.value.menuOpen =status
+    }
+    changeMenuStatus(true);
     return {
         nav: computed(() => state.value.nav),
         pages: computed(() => state.value.pages),
         config: computed(() => state.value.config),
         currentPageId: computed(() => state.value.currentPageId),
         currentSectionId: computed(() => state.value.currentSectionId),
+        menuOpen: computed(() => state.value.menuOpen),
         updateState,
         updateCurrentPage,
-        updateCurrentSection
+        updateCurrentSection,
+        toggleMenuStatus,
+        changeMenuStatus
     }
 }

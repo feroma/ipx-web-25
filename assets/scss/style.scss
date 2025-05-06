@@ -59,7 +59,7 @@
 $debug_bg: rgba(255, 255, 255, 0.1);
 
 body {
-  background-color: $black;
+  background-color: $blue_dark;
   color: $white;
 
   //font-weight: 300;
@@ -836,6 +836,8 @@ $entry_indent: $spacer*4;
   }
 
   .v-tabs-items-content {
+    width: 100%;
+
     svg {
       margin-left: -$entry_indent;
     }
@@ -1013,6 +1015,7 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
   }
 }
 
+
 /**
 ============== sidebar-navigator
  */
@@ -1068,7 +1071,8 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
       transition: all 0.3s ease;
       z-index: 3;
     }
-    .number{
+
+    .number {
       position: absolute;
       top: 50%;
       right: -$spacer*3;
@@ -1077,25 +1081,25 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
       @extend .title-font;
       font-size: 32px;
       font-weight: 200;
-      color: rgba($azure_light,0.2);
+      color: rgba($azure_light, 0.2);
       letter-spacing: -0.15em;
       opacity: 0;
       transition: all 0.6s ease;
     }
 
-    .tooltip{
+    .tooltip {
       position: absolute;
       right: 32px;
       top: 50%;
       transform: translateY(-50%);
-      background-color: rgba($black,0.5);
+      background-color: rgba($black, 0.5);
 
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.3s ease, visibility 0.3s ease;
       overflow: hidden;
 
-      span{
+      span {
         display: block;
 
         padding: 2px $spacer;
@@ -1108,7 +1112,8 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
         white-space: nowrap;
         border-top: solid 1px $white;
         position: relative;
-        &:after{
+
+        &:after {
           content: '';
           width: 4px;
           height: 4px;
@@ -1118,6 +1123,7 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
           position: absolute;
           opacity: 0.2;
         }
+
         transform: translatex(-100%);
         transition: transform 0.6s ease;
       }
@@ -1142,24 +1148,238 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
 
 
   }
-  .dot:hover{
+
+  .dot:hover {
     .tooltip {
       opacity: 1;
       visibility: visible;
-      span{
+
+      span {
         transform: translatex(0%);
       }
     }
   }
+
   .dot.active {
-    .number{
+    .number {
       right: -$spacer*1.5;
       opacity: 1;
     }
   }
 }
 
+/**
+ ============================================================ header
+ */
+#header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  //overflow-x: hidden;
+}
 
+#iperformx_header_logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: $spacer*2;
+  overflow: hidden;
+
+  path {
+    fill: $white;
+  }
+
+  svg {
+    height: 48px;
+    width: auto;
+  }
+
+  display: flex;
+
+  .el-1 {
+    overflow: hidden;
+  }
+
+  /*.el-1{
+    overflow: hidden;
+    width: 305px;
+    transition: width 0.4s;
+  }
+  &.active{
+    .el-1{
+      width: 0;
+    }
+  }*/
+}
+
+$menu_height: 48px + $spacer*4;
+.header_menu {
+  .main-menu {
+    &, & .menu-item {
+      height: $menu_height;
+    }
+  }
+
+  .main-menu {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+    display: flex;
+
+    position: absolute;
+    right: $spacer;
+    top: 0;
+
+
+    .menu-item {
+      opacity: 0;
+
+      padding: $spacer;
+      color: $white;
+      @extend .title-font;
+      text-transform: uppercase;
+      @extend .tsmall;
+      letter-spacing: 0.12em;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &.active {
+        color: $azure_light;
+        padding-top: $spacer - 4px;
+        border-top: solid 4px $azure_light;
+      }
+    }
+    transform: translateX(0%);
+    opacity: 1;
+    transition: all 1s;
+  }
+
+
+  /**
+  ----------- over
+   */
+
+
+  &.closed{
+    .main-menu{
+      transform: translateX(105%);
+      opacity: 0;
+      //right: 100%;
+    }
+
+  }
+
+
+}
+.header_icon{
+  position: absolute;
+  right: 0;
+  top: 30px;
+  transform: translateX(105%);
+  opacity: 0;
+  transition: all 1s;
+  cursor: pointer;
+
+  &.opened{
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+
+
+#footer{
+
+  position: fixed;
+  right:0;
+  bottom: 0;
+  z-index:1000;
+  width: 100%;
+  max-width: 1920px;
+
+  p{
+    position: absolute;
+    z-index: 20;
+    padding-left: 16vh;
+    font-size: 9px;
+    line-height: 0.8;
+    text-transform: uppercase;
+    opacity: 0.5;
+    letter-spacing: 0.2em;
+    left:0;
+    bottom: 0;
+  }
+  svg {
+
+    z-index: 10;
+    width: 100%;
+    position: relative;
+    overflow: visible; /* Permette alla maschera di essere visibile anche fuori dai limiti dell'SVG */
+  }
+  path{
+    fill: $black;
+  }
+  .footer-mask rect{
+    height: 131px ;
+    y: 0px ; /* Sposta il rettangolo verso il basso per ancorarsi in basso */
+    transition: all 0.3s ease;
+  }
+  /* Applica la trasformazione alla maschera quando è l'ultima sezione */
+  .mask-reduced rect {
+    height: 37px !important;
+    y: 94px !important; /* Sposta il rettangolo verso il basso per ancorarsi in basso */
+
+  }
+
+  a{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    transform: translateX(0%);
+    opacity: 1;
+    transition: all 0.4s;
+
+    @extend .title-font;
+    line-height: 1;
+
+    span{
+      display: block;
+      color: $white;
+      text-align: right;
+      text-transform: uppercase;
+      padding: $spacer*2 $spacer;
+    }
+    strong{
+      text-align: right;
+      display: block;
+      font-weight: bold;
+      color: $azure_light;
+    }
+    svg{
+      path{
+        stroke: $azure_light;
+        fill: none;
+      }
+      height: 100%;
+      width: auto;
+      margin-right: $spacer;
+    }
+  }
+
+  &.last{
+    a{
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+}
 /* Stili di base - Puoi personalizzarli o rimuoverli se gestisci gli stili altrove */
 /*.accordion-container {*/
 /*  width: 100%;*/
@@ -1259,5 +1479,4 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
 .title-char:has(> .title-letter:empty) {
   width: 0.3em;
 }
-
 
