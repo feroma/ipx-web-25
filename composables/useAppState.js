@@ -9,6 +9,7 @@ export const useAppState = () => {
         currentPageId:null,
         currentSectionId:null,
         menuOpen:null,
+        menuMobileOpen:null,
     }))
 
 
@@ -29,6 +30,9 @@ export const useAppState = () => {
     const changeMenuStatus = (status) => {
         state.value.menuOpen =status
     }
+    const changeMenuMobileStatus = (status) => {
+        state.value.menuMobileOpen =status
+    }
     changeMenuStatus(true);
     return {
         nav: computed(() => state.value.nav),
@@ -37,10 +41,12 @@ export const useAppState = () => {
         currentPageId: computed(() => state.value.currentPageId),
         currentSectionId: computed(() => state.value.currentSectionId),
         menuOpen: computed(() => state.value.menuOpen),
+        menuMobileOpen: computed(() => state.value.menuMobileOpen),
         updateState,
         updateCurrentPage,
         updateCurrentSection,
         toggleMenuStatus,
-        changeMenuStatus
+        changeMenuStatus,
+        changeMenuMobileStatus
     }
 }

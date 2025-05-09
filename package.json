@@ -7,8 +7,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "start": "node .output/server/index.mjs"
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "@nuxt/image": "^1.10.0",
@@ -20,6 +19,5 @@
   },
   "devDependencies": {
     "@types/node": "^22.15.3"
-  },
-
+  }
 }

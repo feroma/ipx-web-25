@@ -465,7 +465,10 @@ body {
 
   .label {
     display: block;
-    padding: 10px 10px 10px $entry_indent;
+    padding: 10px 10px 10px $entry_indent/2;
+    @include media-breakpoint-up(sm) {
+      padding: 10px 10px 10px $entry_indent;
+    }
     text-decoration: none;
     text-transform: uppercase;
     border-top: solid 1px $azure_light;
@@ -478,7 +481,10 @@ body {
 
     &:before {
       content: '';
-      width: $entry_indent;
+      width: $entry_indent/2;
+      @include media-breakpoint-up(sm) {
+        width: $entry_indent;
+      }
       height: 4px;
       background-color: $white;
       left: 0;
@@ -1420,135 +1426,193 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
   left: 0;
   z-index: 1000;
   //overflow-x: hidden;
-}
 
-#iperformx_header_logo {
-  position: absolute;
-  left: 0;
-  top: 0;
-  padding: $spacer*2;
-  overflow: hidden;
 
-  path {
-    fill: $white;
-  }
-
-  svg {
-    width: auto;
-    height: 28px;
-  }
-
-  @include media-breakpoint-up(sm) {
-    svg {
-      height: 48px;
-      width: auto;
-    }
-  }
-
-  display: flex;
-
-  .el-1 {
-    overflow: hidden;
-  }
-
-}
-
-$menu_height: 48px + $spacer*4;
-.header_menu {
-  .main-menu {
-    &, & .menu-item {
-      height: $menu_height;
-    }
-  }
-
-  .main-menu {
-    @include media-breakpoint-down(sm) {
-      display: none;
-    }
-    display: flex;
-
+  #iperformx_header_logo {
     position: absolute;
-    right: $spacer;
+    left: 0;
     top: 0;
+    padding: $spacer*2;
+    overflow: hidden;
 
+    path {
+      fill: $white;
+    }
 
-    .menu-item {
-      opacity: 0;
+    svg {
+      width: auto;
+      height: 28px;
+    }
 
-      padding: $spacer;
-      color: $white;
-      @extend .title-font;
-      text-transform: uppercase;
-      @extend .tsmall;
-      letter-spacing: 0.12em;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      &.active {
-        color: $azure_light;
-        padding-top: $spacer - 4px;
-        border-top: solid 4px $azure_light;
+    @include media-breakpoint-up(sm) {
+      svg {
+        height: 48px;
+        width: auto;
       }
     }
 
-    transform: translateX(0%);
-    opacity: 1;
-    transition: all 1s;
+    display: flex;
+
+    .el-1 {
+      overflow: hidden;
+    }
+
   }
 
+  $menu_height: 48px + $spacer*4;
 
-  /**
-  ----------- over
-   */
-
-
-  &.closed {
+  .header_menu {
     .main-menu {
-      transform: translateX(105%);
-      opacity: 0;
-      //right: 100%;
+      &, & .menu-item {
+        height: $menu_height;
+      }
     }
 
+    .main-menu {
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+      display: flex;
+
+      position: absolute;
+      right: $spacer;
+      top: 0;
+
+
+      .menu-item {
+        opacity: 0;
+
+        padding: $spacer;
+        color: $white;
+        @extend .title-font;
+        text-transform: uppercase;
+        @extend .tsmall;
+        letter-spacing: 0.12em;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &.active {
+          color: $azure_light;
+          padding-top: $spacer - 4px;
+          border-top: solid 4px $azure_light;
+        }
+      }
+
+      transform: translateX(0%);
+      opacity: 1;
+      transition: all 1s;
+    }
+
+
+    /**
+    ----------- over
+     */
+
+
+    &.closed {
+      .main-menu {
+        transform: translateX(105%);
+        opacity: 0;
+        //right: 100%;
+      }
+
+    }
+
+
   }
 
+  .header_icon {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    transform: translateX(105%);
+    opacity: 0;
+    transition: all 1s;
+    cursor: pointer;
 
-}
+    &.opened {
+      transform: translateX(0%);
+      opacity: 1;
+    }
 
-.header_icon {
-  position: absolute;
-  right: 0;
-  top: 30px;
-  transform: translateX(105%);
-  opacity: 0;
-  transition: all 1s;
-  cursor: pointer;
-
-  &.opened {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-
-  svg {
-    width: auto;
-    height: 28px;
-  }
-
-  @include media-breakpoint-up(sm) {
     svg {
-      height: 48px;
       width: auto;
+      height: 28px;
+    }
+
+    @include media-breakpoint-up(sm) {
+      svg {
+        height: 48px;
+        width: auto;
+      }
+    }
+  }
+
+}
+
+/**
+ ============================================================ header MOBILE
+ */
+#header-mobile {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  //overflow-x: hidden;
+  #iperformx_header_logo_mobile {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: $spacer*2;
+    overflow: hidden;
+
+    path {
+      fill: $white;
+    }
+
+    svg {
+      width: auto;
+      height: 28px;
+    }
+
+    display: flex;
+
+    .el-1 {
+      overflow: hidden;
+    }
+  }
+
+  .header_icon {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    transform: translateX(105%);
+    opacity: 0;
+    transition: all 1s;
+    cursor: pointer;
+
+    &.opened {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+
+    svg {
+      width: auto;
+      height: 28px;
     }
   }
 }
+
+
 /**
- ============================================================ header menu
+ ============================================================ FOOTER
  */
 
 #footer {
 
-  display: none;
   position: fixed;
   right: 0;
   bottom: 0;
@@ -1643,6 +1707,23 @@ $menu_height: 48px + $spacer*4;
       transform: translateX(100%);
       opacity: 0;
     }
+  }
+}
+
+#footer-mobile {
+  background-color: $black;
+  position: relative;
+  z-index: 100;
+
+  p {
+    font-size: 9px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    opacity: 0.5;
+    letter-spacing: 0.2em;
+    text-align: center;
+    margin: 0;
+    padding: $spacer;
   }
 }
 

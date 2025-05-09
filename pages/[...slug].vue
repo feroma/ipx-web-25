@@ -2,7 +2,9 @@
   <!-- LOAD: {{loading}}-->
 
   <div v-if="loadedPageData && loadedPageData.page">
-    <SiteHeader v-if="loadedPageData.page.sections"
+    <SiteHeader class="d-none d-sm-block" v-if="loadedPageData.page.sections"
+                :sections="loadedPageData.page.sections"/>
+    <SiteHeaderMobile class="d-block d-sm-none" v-if="loadedPageData.page.sections"
                 :sections="loadedPageData.page.sections"/>
     <SidebarNavigator
         v-if="loadedPageData.page.sections"
@@ -26,7 +28,9 @@
           :section="section"/>
 
     </div>
-    <SiteFooter v-if="loadedPageData.page.sections"
+    <SiteFooter class="d-none d-sm-block" v-if="loadedPageData.page.sections"
+                :sections="loadedPageData.page.sections"/>
+    <SiteFooterMobile class="d-block d-sm-none" v-if="loadedPageData.page.sections"
                 :sections="loadedPageData.page.sections"/>
   </div>
 </template>
