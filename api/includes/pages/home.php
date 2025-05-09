@@ -7,7 +7,7 @@ $section1 = [
 	'class' => 'section-standard',
 	'menu_label' => 'Welcome',
 	'bg' => [
-		//		'mobile' => 'bg-mobile-01.jpg',
+		'mobile' => 'section-1-bg-mobile.jpg',
 		//		'tablet' => 'bg-tablet-01.jpg',
 		'desktop' => 'section-1-bg-desktop.jpg',
 	],
@@ -67,7 +67,7 @@ $section2 = [
 	'class' => 'section-standard',
 	'menu_label' => 'Uniqueness',
 	'bg' => [
-		//		'mobile' => 'bg-mobile-01.jpg',
+		'mobile' => 'section-2-bg-mobile.jpg',
 		//		'tablet' => 'bg-tablet-01.jpg',
 		'desktop' => 'section-2-bg-desktop.jpg',
 	],
@@ -76,7 +76,7 @@ $section2 = [
 			'class' => 'align-items-center min-vh-100',
 			'columns' => [
 				[
-					'class' => 'offset-sm-1 col-sm-12 col-md-5',
+					'class' => 'offset-md-1 col-sm-12 col-md-5  order-2 order-md-1',
 					'wrapper_class' => 'entry',
 					'widgets' => [
 						[
@@ -134,7 +134,7 @@ $section2 = [
 					],
 				],
 				[
-					'class' => 'col-sm-12 col-md-6',
+					'class' => 'col-sm-12 col-md-6 order-1 order-md-2',
 					//'wrapper_class' => 'entry',
 					'widgets' => [
 						[
@@ -146,7 +146,7 @@ $section2 = [
 											'title' => 'Empowering Instructors with AI',
 											'icon' => [
 												'src' => 'icon-ip.png',
-												'alt' => 'MXR for Instructors'
+												'alt' => 'MXR for Instructors',
 											],
 											'html' => 'Decision-Making Support, Focused Interventions, Optimized Workflow.',
 										],
@@ -156,7 +156,7 @@ $section2 = [
 											'title' => 'Student-Centered Learning',
 											'icon' => [
 												'src' => 'icon-cloud_network.png',
-												'alt' => 'MXR for Students'
+												'alt' => 'MXR for Students',
 											],
 											'html' => 'Summary & Alerts, Decision Support, Personalized Learning Suggestions.',
 										],
@@ -219,6 +219,10 @@ $section3 = [
 											The iPerformX Suite facilitates early intervention to prevent critical issues and avoid failures and dropouts. 
 											AI recommendations and guidance ensure adherence to timelines and preparation standards.',
 											'class' => 'col-md-50perc',
+											'image' => [
+												'src' => 'students_1.jpg',
+												'alt' => 'MXR for Students',
+											],
 										],
 									],
 									[
@@ -228,6 +232,10 @@ $section3 = [
 											fostering a strong motivation for self-learning.
 											AI-generated learning paths, supervised by Instructors, provide guidance to each student at every stage of their training experience.',
 											'class' => 'col-md-50perc',
+											'image' => [
+												'src' => 'students_2.jpg',
+												'alt' => 'MXR for Students',
+											],
 										],
 									],
 
@@ -312,7 +320,7 @@ $section4 = [
 											'html' => 'Plan missions in 2D, 3D, and extended reality environments with AI support.',
 											'icon' => [
 												'src' => 'icon-network.png',
-												'alt' => 'PLAN'
+												'alt' => 'PLAN',
 											],
 										],
 									],
@@ -323,7 +331,7 @@ $section4 = [
 											'html' => 'AI-generated mission briefs that are clear, engaging, and interactive.',
 											'icon' => [
 												'src' => 'icon-virtual-classroom.png',
-												'alt' => 'BRIEF'
+												'alt' => 'BRIEF',
 											],
 										],
 									],
@@ -334,7 +342,7 @@ $section4 = [
 											'html' => 'Experience ultra-realistic scenarios in high-fidelity virtual simulators.',
 											'icon' => [
 												'src' => 'icon-virtual_reality.png',
-												'alt' => 'FLY'
+												'alt' => 'FLY',
 											],
 										],
 									],
@@ -345,7 +353,7 @@ $section4 = [
 											'html' => 'Review key mission events with AI-tagged highlights for faster, smarter debriefs.',
 											'icon' => [
 												'src' => 'icon-biometrics.png',
-												'alt' => 'DEBRIEF'
+												'alt' => 'DEBRIEF',
 											],
 										],
 									],
@@ -644,7 +652,7 @@ $section6 = [
 						[
 							'component' => 'Cta',
 							'props' => [
-								'html' => 'our new lightweight ITD...',
+								'html' => 'our lightweight ITD...',
 								'href' => '#eitd',
 							],
 
@@ -745,7 +753,7 @@ $section9 = [
 	'layout' => 'default',
 	'class' => 'section-standard',
 	'bg' => [
-		//		'mobile' => 'bg-mobile-01.jpg',
+		'mobile' => 'section-7-bg-mobile.jpg',
 		//		'tablet' => 'bg-tablet-01.jpg',
 		'desktop' => 'section-7-bg-desktop.jpg',
 	],
@@ -860,7 +868,7 @@ $page     = [
 		$section2,
 		$section3,
 		$section4,
-		//$section5,
+
 		$section6,
 		$section8,
 		$section9,
