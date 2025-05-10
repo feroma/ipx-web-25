@@ -51,7 +51,7 @@ const activeTabIndex = ref(props.initialActiveIndex)
 
 <!--            <h1>{{ index }}</h1>-->
 
-            <svg width="852" height="735" viewBox="0 0 852 735" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg  viewBox="0 0 852 735" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <mask :id="'myMask_vtabs_'+index">
                   <rect width="100%" height="100%" fill="black"/>

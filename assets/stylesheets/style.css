@@ -6435,9 +6435,15 @@ body {
   .row.min-vh-100, .min-vh-100.teaser-list-1, .min-vh-100.teaser-list-3, .min-vh-100.teaser-list-4 {
     min-height: calc(100vh - 60px) !important; } }
 
-@media (min-width: 920px) and (max-width: 1359.98px) {
+@media (min-width: 1360px) {
   .last-section {
     min-height: calc(100vh - 40px) !important; } }
+@media (min-width: 920px) {
+  .last-section {
+    min-height: calc(100vh - 40px) !important; } }
+@media (min-width: 1360px) {
+  .last-section {
+    min-height: 100vh !important; } }
 
 @media (min-width: 920px) {
   .col-md-20perc {
@@ -6460,11 +6466,17 @@ body {
     .pb-footer {
       padding-bottom: 130px !important; } }
 
+.first-entry {
+  padding-bottom: 130px !important; }
+
 .mbottom, #mxr-logo, .pretitle, .summary, .entry > p, .main-title, .teaser-list-3 .teaser .teaser-image, .teaser-list-4 .teaser .teaser-image, .accordion-container .accordion-content {
   margin-bottom: 15px; }
   @media (min-width: 680px) {
     .mbottom, #mxr-logo, .pretitle, .summary, .entry > p, .main-title, .teaser-list-3 .teaser .teaser-image, .teaser-list-4 .teaser .teaser-image, .accordion-container .accordion-content {
       margin-bottom: 30px; } }
+  @media (min-width: 1360px) {
+    .mbottom, #mxr-logo, .pretitle, .summary, .entry > p, .main-title, .teaser-list-3 .teaser .teaser-image, .teaser-list-4 .teaser .teaser-image, .accordion-container .accordion-content {
+      margin-bottom: 60px; } }
 
 .padding-indent, .entry > p, .simple-list li, .accordion-container .accordion-content {
   padding-left: 30px; }
@@ -6505,8 +6517,8 @@ body {
       line-height: 24px; } }
   @media (min-width: 2550px) {
     .tbase, body, .pretitle, .teaser-list-3 .teaser h4, .main-button .label, .blocks .block h4, .contact-form-panel .form-container .form-group > label {
-      font-size: 18px;
-      line-height: 28px; } }
+      font-size: 26px;
+      line-height: 38px; } }
 
 .tsmall, .disclaimer p, #header .header_menu .main-menu .menu-item, .close-menu span, #menu-overlay ul a {
   font-size: 10px;
@@ -6515,6 +6527,10 @@ body {
     .tsmall, .disclaimer p, #header .header_menu .main-menu .menu-item, .close-menu span, #menu-overlay ul a {
       font-size: 12px;
       line-height: 16px; } }
+  @media (min-width: 2550px) {
+    .tsmall, .disclaimer p, #header .header_menu .main-menu .menu-item, .close-menu span, #menu-overlay ul a {
+      font-size: 20px;
+      line-height: 28px; } }
 
 .tbase2, .cta-button .label {
   font-size: 11px;
@@ -6533,7 +6549,7 @@ body {
       line-height: 24px; } }
   @media (min-width: 2550px) {
     .tbase2, .cta-button .label {
-      font-size: 18px;
+      font-size: 22px;
       line-height: 28px; } }
 
 .t2, .main-title, .teaser-list-2 .teaser .teaser-entry h3 {
@@ -6545,16 +6561,16 @@ body {
       line-height: 36px; } }
   @media (min-width: 2550px) {
     .t2, .main-title, .teaser-list-2 .teaser .teaser-entry h3 {
-      font-size: 56px;
-      line-height: 56px; } }
+      font-size: 72px;
+      line-height: 72px; } }
 
 .t2b, .teaser-list-3 .teaser h3 {
   font-size: 22px;
   line-height: 30px; }
   @media (min-width: 2550px) {
     .t2b, .teaser-list-3 .teaser h3 {
-      font-size: 36px;
-      line-height: 36px; } }
+      font-size: 48px;
+      line-height: 48px; } }
 
 .t3, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-1b .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .accordion-container .accordion-content h3, .main-button-wrapper h2 {
   font-size: 16px;
@@ -6569,8 +6585,8 @@ body {
       line-height: 26px; } }
   @media (min-width: 2550px) {
     .t3, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-1b .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .accordion-container .accordion-content h3, .main-button-wrapper h2 {
-      font-size: 28px;
-      line-height: 30px; } }
+      font-size: 36px;
+      line-height: 40px; } }
 
 .t3b, .teaser-list-4 .teaser h3, .v-tabs-items-list li span {
   font-size: 12px;
@@ -6781,14 +6797,25 @@ h1, h2, h3 {
     @media (min-width: 1360px) {
       .teaser-list-1b .teaser img {
         max-width: 150px; } }
+    @media (min-width: 2550px) {
+      .teaser-list-1b .teaser img {
+        max-width: 250px; } }
   .teaser-list-1b .teaser .teaser-entry h4 {
     padding: 15px 0 15px 30px;
     border-left: solid 4px #fff;
     text-transform: uppercase;
     font-weight: 400;
     color: #fff; }
+    @media (min-width: 2550px) {
+      .teaser-list-1b .teaser .teaser-entry h4 {
+        padding: 15px 0 45px 60px; } }
   .teaser-list-1b .teaser .teaser-entry p {
     padding-left: 34px; }
+    @media (min-width: 2550px) {
+      .teaser-list-1b .teaser .teaser-entry p {
+        padding-left: 64px;
+        padding-right: 60px;
+        padding-bottom: 30px; } }
 
 /**
 -----------------------------------------
@@ -6955,7 +6982,6 @@ h1, h2, h3 {
       margin-top: -30px; }
     .teaser-list-3 .teaser h3 {
       padding: 7.5px 0 30px 34px;
-      text-transform: uppercase;
       font-weight: 200;
       color: #fff;
       border-left: solid 1px #fff;
@@ -7062,14 +7088,16 @@ h1, h2, h3 {
           transform: scale(100%);
           border-bottom: solid 4px #acd1e9; } }
 
-.v-tabs-items-content svg {
-  width: 100%;
-  height: auto; }
-.v-tabs-items-content h1 {
-  position: absolute;
-  left: 30px;
-  top: 30px;
-  z-index: 10; }
+.v-tabs-items-content {
+  width: 100%; }
+  .v-tabs-items-content svg {
+    width: 100% !important;
+    height: auto; }
+  .v-tabs-items-content h1 {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    z-index: 10; }
 
 /**
   ==== accordion
@@ -7095,7 +7123,6 @@ h1, h2, h3 {
   margin-bottom: 60px; }
   .accordion-container .accordion-header {
     padding: 15px 0;
-    display: block;
     text-decoration: none;
     text-transform: uppercase;
     color: #ACD1E9;
@@ -7103,7 +7130,20 @@ h1, h2, h3 {
     position: relative;
     opacity: 0.5;
     transition: opacity 0.4s;
-    cursor: pointer; }
+    cursor: pointer;
+    display: flex;
+    align-items: center; }
+    .accordion-container .accordion-header .accordion-title {
+      display: block;
+      flex-shrink: 0;
+      flex-grow: 1;
+      flex: 0 1 100%; }
+    .accordion-container .accordion-header svg {
+      margin-left: 5px;
+      flex-shrink: 0;
+      flex-grow: 0;
+      opacity: 1;
+      transition: opacity 0.2s; }
     .accordion-container .accordion-header:before {
       content: '';
       width: 60px;
@@ -7129,6 +7169,8 @@ h1, h2, h3 {
         width: 120px;
         left: -60px;
         opacity: 1; }
+      .accordion-container .accordion-header.active svg {
+        opacity: 0; }
   .accordion-container .accordion-content h3 {
     padding: 0 0 15px 0;
     text-transform: uppercase;
@@ -7226,7 +7268,7 @@ h1, h2, h3 {
   top: 50%;
   transform: translateY(-50%);
   z-index: 50; }
-  @media (max-width: 919.98px) {
+  @media (max-width: 679.98px) {
     .sidebar-navigator {
       display: none; } }
 
@@ -7241,6 +7283,10 @@ h1, h2, h3 {
     position: relative;
     display: block;
     opacity: 0; }
+    @media (min-width: 2550px) {
+      .dots-container .dot {
+        width: 48px;
+        height: 48px; } }
     .dots-container .dot .el-1 {
       position: absolute;
       top: 50%;
@@ -7253,6 +7299,10 @@ h1, h2, h3 {
       border-radius: 1px;
       transition: all 0.3s ease;
       z-index: 2; }
+      @media (min-width: 2550px) {
+        .dots-container .dot .el-1 {
+          width: 16px;
+          height: 16px; } }
     .dots-container .dot .el-2 {
       position: absolute;
       top: 50%;
@@ -7264,6 +7314,10 @@ h1, h2, h3 {
       border-radius: 3px;
       transition: all 0.3s ease;
       z-index: 3; }
+      @media (min-width: 2550px) {
+        .dots-container .dot .el-2 {
+          width: 4px;
+          height: 4px; } }
     .dots-container .dot .number {
       position: absolute;
       top: 50%;
@@ -7299,6 +7353,9 @@ h1, h2, h3 {
         position: relative;
         transform: translatex(-100%);
         transition: transform 0.6s ease; }
+        @media (min-width: 2550px) {
+          .dots-container .dot .tooltip span {
+            font-size: 1rem; } }
         .dots-container .dot .tooltip span:after {
           content: '';
           width: 4px;
@@ -7700,10 +7757,11 @@ body.hide-overflow {
     @media (min-width: 680px) {
       .contact-form-panel .form-container {
         padding: 60px 30px !important;
-        max-width: 50vw; } }
+        max-width: 90vw; } }
     @media (min-width: 1360px) {
       .contact-form-panel .form-container {
-        padding: 45px 90px !important; } }
+        padding: 45px 90px !important;
+        max-width: 1000px; } }
     .contact-form-panel .form-container .form-group > label {
       color: #ACD1E9;
       text-transform: uppercase;

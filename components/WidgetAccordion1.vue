@@ -4,7 +4,7 @@
       <!--      ///////////////////////image-->
       <div class="col-sm-12 col-md-6 d-flex align-items-center overflow-hidden">
         <div  class="v-tabs-items-content">
-          <svg width="852" height="735" viewBox="0 0 852 735" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg  viewBox="0 0 852 735" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <mask :id="'myMask_accordion'">
                 <rect width="100%" height="100%" fill="black"/>
@@ -26,7 +26,7 @@
       </div>
       <!--      /////////////////////// / image-->
       <!--      ///////////////////////list-->
-      <div class="col-md-7 col-content d-flex flex-column justify-content-center">
+      <div class="col-sm-12 col-md-7 col-content d-flex flex-column justify-content-center">
         <widget-pretitle v-if="content.pretitle" :content="content.pretitle.props"></widget-pretitle>
         <widget-main-title v-if="content.title" :content="content.title.props"></widget-main-title>
         <div class="accordion-container">
@@ -43,10 +43,18 @@
                 @click="toggleAccordion(index)"
                 :class="{ 'active': activeIndices.includes(index) }"
             >
-              <div class="accordion-title">{{ item.title }}</div>
-<!--              <div class="accordion-icon">
-                {{ activeIndices.includes(index) ? '−' : '+' }}
-              </div>-->
+              <div class="accordion-title">
+                <span>{{ item.title }}</span>
+              </div>
+
+              <svg width="36" height="34" viewBox="0 0 36 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.5 30.1364L0.5 3.86364C0.5 1.72981 2.22981 0 4.36364 0L31.6364 4.05289e-06C33.7702 4.33064e-06 35.5 1.72981 35.5 3.86364L35.5 23.6366C35.5 25.6567 34.7089 27.5965 33.2962 29.0405L30.7171 31.6766C29.2634 33.1625 27.2724 34 25.1937 34L4.36364 34C2.22981 34 0.5 32.2702 0.5 30.1364Z" fill="#ACD1E9"/>
+                <path d="M25 20L18.1429 27.4834C17.5117 28.1722 16.4883 28.1722 15.8571 27.4834L9 20" stroke="#001432" stroke-width="2"/>
+              </svg>
+
+              <!--              <div class="accordion-icon">
+                              {{ activeIndices.includes(index) ? '−' : '+' }}
+                            </div>-->
             </div>
 
             <!-- Contenuto dell'accordion -->

@@ -25,7 +25,7 @@
         <form @submit.prevent="validateAndSubmit">
           <!-- First and Last Name - Separate fields -->
           <div class="form-row">
-            <div class="form-group col-md-7">
+            <div class="form-group col-sm-7">
               <label for="firstName">First Name <span class="text-danger">*</span></label>
               <input
                   type="text"
@@ -39,7 +39,7 @@
                 First name is required
               </div>
             </div>
-            <div class="form-group col-md-7">
+            <div class="form-group col-sm-7">
               <label for="lastName">Last Name <span class="text-danger">*</span></label>
               <input
                   type="text"
@@ -57,7 +57,7 @@
 
           <div class="form-row">
             <!-- Organization -->
-            <div class="form-group col-md-7">
+            <div class="form-group col-sm-7">
               <label for="organization">Organization <span class="text-danger">*</span></label>
               <input
                   type="text"
@@ -72,7 +72,7 @@
               </div>
             </div>
             <!-- Location -->
-            <div class="form-group col-md-7">
+            <div class="form-group col-sm-7">
               <label for="location">Location <span class="text-danger">*</span></label>
               <input
                   type="text"
@@ -90,7 +90,7 @@
 
           <div class="form-row">
             <!-- Email -->
-            <div class="form-group col-md-10">
+            <div class="form-group col-sm-10">
               <label for="email">Email <span class="text-danger">*</span></label>
               <input
                   type="email"
@@ -106,7 +106,7 @@
             </div>
 
             <!-- Phone -->
-            <div class="form-group col-md-4">
+            <div class="form-group col-sm-4">
               <label for="phone">Phone <span class="text-danger">*</span></label>
               <input
                   type="tel"
@@ -145,41 +145,45 @@
             </div>
           </div>
 
-          <!-- Number of Seats -->
-          <div class="form-group">
-            <label for="seats">Number of Seats <span class="text-danger">*</span></label>
-            <input
-                type="number"
-                class="form-control"
-                :class="{'is-invalid': errors.seats}"
-                id="seats"
-                min="1"
-                v-model="formData.seats"
-                required
-            >
-            <div v-if="errors.seats" class="invalid-feedback">
-              Please specify a valid number of seats (minimum 1)
-            </div>
-          </div>
-
-          <!-- Options - Custom Checkboxes -->
-          <div class="form-group">
-            <label>Options <span class="text-danger">*</span></label>
-            <div v-if="errors.selectedOptions" class="text-danger mb-2">
-              Please select at least one option
-            </div>
-
-            <div v-for="option in optionsAvailable" :key="option.value" class="custom-control custom-checkbox custom-control-inline">
+          <div class="form-row">
+            <!-- Number of Seats -->
+            <div class="form-group col-sm-6">
+              <label for="seats">Number of Seats <span class="text-danger">*</span></label>
               <input
-                  type="checkbox"
-                  class="custom-control-input"
-                  :id="option.value"
-                  :value="option.value"
-                  v-model="formData.selectedOptions"
+                  type="number"
+                  class="form-control"
+                  :class="{'is-invalid': errors.seats}"
+                  id="seats"
+                  min="1"
+                  v-model="formData.seats"
+                  required
               >
-              <label class="custom-control-label" :for="option.value">{{ option.label }}</label>
+              <div v-if="errors.seats" class="invalid-feedback">
+                Please specify a valid number of seats (minimum 1)
+              </div>
             </div>
+
+            <!-- Options - Custom Checkboxes -->
+            <div class="form-group col-sm-7 offset-sm-1">
+              <label>Options <span class="text-danger">*</span></label>
+              <div v-if="errors.selectedOptions" class="text-danger mb-2">
+                Please select at least one option
+              </div>
+
+              <div v-for="option in optionsAvailable" :key="option.value" class="custom-control custom-checkbox custom-control-inline">
+                <input
+                    type="checkbox"
+                    class="custom-control-input"
+                    :id="option.value"
+                    :value="option.value"
+                    v-model="formData.selectedOptions"
+                >
+                <label class="custom-control-label" :for="option.value">{{ option.label }}</label>
+              </div>
+            </div>
+
           </div>
+
 
           <!-- Additional Project Needs -->
           <div class="form-group">

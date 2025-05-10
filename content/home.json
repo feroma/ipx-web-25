@@ -18,7 +18,7 @@
             "columns": [
               {
                 "class": "offset-sm-1 col-sm-12 col-md-7",
-                "wrapper_class": "entry pb-footer",
+                "wrapper_class": "entry pb-footer first-entry",
                 "widgets": [
                   {
                     "component": "Pretitle",
@@ -206,7 +206,7 @@
                         {
                           "props": {
                             "title": "Dynamic and Effective Learning",
-                            "html": "Through seamless integration with academic courseware, <strong>MissionXR</strong> creates a dynamic, personalized learning journey that inspires self-motivation and mastery. AI-driven learning paths, with instructor oversight, ensure students are supported and challenged appropriately throughout every phase of their education. ",
+                            "html": "Through seamless integration with academic courseware, <strong>MissionXR</strong> creates a dynamic, personalized learning journey that inspires self-motivation and mastery. AI-driven learning paths, with instructor oversight, <strong>ensure students are supported</strong> and challenged appropriately throughout every phase of their education. ",
                             "class": "col-md-50perc",
                             "image": {
                               "src": "students_2.jpg",
@@ -250,7 +250,7 @@
                   {
                     "component": "Pretitle",
                     "props": {
-                      "html": "The Virtual Training Environment / 1"
+                      "html": "The Virtual Training Environment"
                     }
                   },
                   {
@@ -263,7 +263,7 @@
                     "component": "Cta",
                     "props": {
                       "html": "more...",
-                      "href": "#vte-2"
+                      "href": "#row-vte-1"
                     }
                   }
                 ]
@@ -366,7 +366,7 @@
                         {
                           "props": {
                             "summary": "Augment learning",
-                            "title": "WINGMAN™ <br>Intelligent Tutor",
+                            "title": "WINGMAN™ Intelligent Tutor",
                             "html": "AI provides real-time suggestions to learn while simulating.",
                             "image": "vte_03.jpg",
                             "class": "col-md-33perc pr-lg-5"
