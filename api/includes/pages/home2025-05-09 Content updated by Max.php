@@ -757,11 +757,11 @@ $section9 = [
 			'class' => 'align-items-end flex-grow-1',
 			'columns' => [
 				[
-					'class' => 'col-md-7',
+					'class' => 'col-sm-7',
 					'widgets' => [],
 				],
 				[
-					'class' => 'col-sm-12 col-md-5',
+					'class' => 'col-sm-5',
 					'wrapper_class' => 'entry pb-1',
 					'widgets' => [
 						[
@@ -868,7 +868,7 @@ $page     = [
 		$section9,
 	],
 	'meta' => [
-		'title' => 'Mission XR',
+		'title' => 'MissionXR',
 		'description' => 'meta description of iPerformX MissionXR',
 	],
 ];
