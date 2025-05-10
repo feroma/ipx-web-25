@@ -1,0 +1,21 @@
+{
+  "nav": [
+    {
+      "id": "1",
+      "label": "homepage",
+      "slug": "/"
+    }
+  ],
+  "config": {
+    "REPO_URL": "https://xr.iperformx.com/repo",
+    "COPYRIGHT": "©2025,️iperformx.com | all rights reserved |  all content is protected and cannot be replicated without explicit authorization.",
+    "FOOTER_LINK": "Get MissionXR<strong>Request a Quote</strong>"
+  },
+  "pages": {
+    "1": {
+      "title": "Welcome",
+      "body": "Welcome to our new site",
+      "sections": []
+    }
+  }
+}

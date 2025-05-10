@@ -10,6 +10,8 @@ export const useAppState = () => {
         currentSectionId:null,
         menuOpen:null,
         menuMobileOpen:null,
+        hideOverflow:null,
+        contactFormOpen:null,
     }))
 
 
@@ -33,6 +35,12 @@ export const useAppState = () => {
     const changeMenuMobileStatus = (status) => {
         state.value.menuMobileOpen =status
     }
+    const changeHideOverflow = (status) => {
+        state.value.hideOverflow =status
+    }
+    const changeContactForm = (status) => {
+        state.value.contactFormOpen =status
+    }
     changeMenuStatus(true);
     return {
         nav: computed(() => state.value.nav),
@@ -42,11 +50,15 @@ export const useAppState = () => {
         currentSectionId: computed(() => state.value.currentSectionId),
         menuOpen: computed(() => state.value.menuOpen),
         menuMobileOpen: computed(() => state.value.menuMobileOpen),
+        hideOverflow: computed(() => state.value.hideOverflow),
+        contactFormOpen: computed(() => state.value.contactFormOpen),
         updateState,
         updateCurrentPage,
         updateCurrentSection,
         toggleMenuStatus,
         changeMenuStatus,
-        changeMenuMobileStatus
+        changeMenuMobileStatus,
+        changeHideOverflow,
+        changeContactForm
     }
 }

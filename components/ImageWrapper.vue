@@ -1,14 +1,24 @@
 <template>
   <div class="image-wrapper">
+<!--    <nuxt-img-->
+<!--      :src="currentSrc"-->
+<!--      :alt="alt"-->
+<!--      :width="width"-->
+<!--      :height="height"-->
+<!--      :placeholder="placeholder"-->
+<!--      :loading="loading"-->
+<!--      :quality="quality"-->
+<!--      :class="imageClass"-->
+<!--    />-->
     <nuxt-img
-      :src="currentSrc"
-      :alt="alt"
-      :width="width"
-      :height="height"
-      :placeholder="placeholder"
-      :loading="loading"
-      :quality="quality"
-      :class="imageClass"
+        :src="currentSrc"
+        :alt="alt"
+        :width="width"
+        :height="height"
+        :placeholder="placeholder"
+        :loading="loading"
+
+        :class="imageClass"
     />
   </div>
 </template>
@@ -34,11 +44,11 @@ const props = defineProps({
   // Breakpoints per determinare quando cambiare immagine
   mobileBreakpoint: {
     type: Number,
-    default: 640
+    default: 1023
   },
   tabletBreakpoint: {
     type: Number,
-    default: 1023
+    default: 1024
   },
   // Altri attributi per <nuxt-img>
   alt: {

@@ -42,7 +42,7 @@ $section1 = [
 						[
 							'component' => 'Paragraph',
 							'props' => [
-								'html' => 'MissionXR seamlessly integrates AI, simulation, and remote instruction for comprehensive, efficient training.',
+								'html' => 'MissionXR: Where immersive synthetic training meets AI and remote instruction to deliver an efficient learning experience.',
 							],
 
 						],
@@ -105,17 +105,17 @@ $section2 = [
 									],
 									[
 										'props' => [
-											'html' => 'Evaluate student performance and <strong>personalize training</strong>',
+											'html' => 'Training <strong>adapts to student performance</strong> and competency benchmarks',
 										],
 									],
 									[
 										'props' => [
-											'html' => '<strong>Predict</strong> outcomes to address issues early',
+											'html' => 'Dynamically uncover and <strong>close skill gaps</strong> early, reducing costly retraining',
 										],
 									],
 									[
 										'props' => [
-											'html' => 'Keep <strong>humans in the loop</strong> to ensure precision and adaptability',
+											'html' => '<strong>Human-in-the-loop</strong> oversight ensures instructional control, and real-time intervention',
 										],
 									],
 
@@ -146,19 +146,19 @@ $section2 = [
 											'title' => 'Empowering Instructors with AI',
 											'icon' => [
 												'src' => 'icon-ip.png',
-												'alt' => 'MXR for Instructors',
+												'alt' => 'MissionXR for Instructors',
 											],
-											'html' => 'Decision-Making Support, Focused Interventions, Optimized Workflow.',
+											'html' => 'Context-Aware Coaching Prompts, Competency-Based Progress Tracking, Skill Gap Detection.',
 										],
 									],
 									[
 										'props' => [
-											'title' => 'Student-Centered Learning',
+											'title' => 'Adaptive, Learner-Focused Training',
 											'icon' => [
 												'src' => 'icon-cloud_network.png',
-												'alt' => 'MXR for Students',
+												'alt' => 'MissionXR for Students',
 											],
-											'html' => 'Summary & Alerts, Decision Support, Personalized Learning Suggestions.',
+											'html' => 'Dynamic Feedback Loops, Trend Monitoring & Alerts, Real-Time Performance Insights.',
 										],
 									],
 
@@ -196,14 +196,14 @@ $section3 = [
 						[
 							'component' => 'Pretitle',
 							'props' => [
-								'html' => 'Main Features',
+								'html' => 'Features',
 							],
 						],
 
 						[
 							'component' => 'MainTitle',
 							'props' => [
-								'html' => 'What mission-xr Can Do',
+								'html' => 'What MissionXR Can Do',
 							],
 
 						],
@@ -214,27 +214,23 @@ $section3 = [
 								'items' => [
 									[
 										'props' => [
-											'title' => 'Prevent Learning Failure',
-											'html' => 'Data centralization and AI-guided analysis allows the accurate monitoring of students’ educational paths. 
-											The iPerformX Suite facilitates early intervention to prevent critical issues and avoid failures and dropouts. 
-											AI recommendations and guidance ensure adherence to timelines and preparation standards.',
+											'title' => 'Early Intervention and Remediation',
+											'html' => 'AI recognizes knowledge gaps in learner interactions and <strong>automates</strong> the delivery of validated generative instructional material.',
 											'class' => 'col-md-50perc',
 											'image' => [
 												'src' => 'students_1.jpg',
-												'alt' => 'MXR for Students',
+												'alt' => 'MissionXR for Students',
 											],
 										],
 									],
 									[
 										'props' => [
 											'title' => 'Dynamic and Effective Learning',
-											'html' => 'Smart multimedia tools, always accessible to all students, create a comprehensive and personalized educational journey, 
-											fostering a strong motivation for self-learning.
-											AI-generated learning paths, supervised by Instructors, provide guidance to each student at every stage of their training experience.',
+											'html' => 'Through seamless integration with academic courseware, <strong>MissionXR</strong> creates a dynamic, personalized learning journey that inspires self-motivation and mastery. AI-driven learning paths, with instructor oversight, ensure students are supported and challenged appropriately throughout every phase of their education. ',
 											'class' => 'col-md-50perc',
 											'image' => [
 												'src' => 'students_2.jpg',
-												'alt' => 'MXR for Students',
+												'alt' => 'MissionXR for Students',
 											],
 										],
 									],
@@ -317,7 +313,7 @@ $section4 = [
 										'props' => [
 											'title' => 'PLAN',
 											'summary' => 'AI-Driven Mission Planning',
-											'html' => 'Plan missions in 2D, 3D, and extended reality environments with AI support.',
+											'html' => 'Accelerate mission readiness and develop winning strategies with intelligent planning across immersive 2D and 3D spaces.',
 											'icon' => [
 												'src' => 'icon-network.png',
 												'alt' => 'PLAN',
@@ -328,7 +324,7 @@ $section4 = [
 										'props' => [
 											'title' => 'BRIEF',
 											'summary' => 'Interactive Mission Briefing',
-											'html' => 'AI-generated mission briefs that are clear, engaging, and interactive.',
+											'html' => 'Step into your mission with intelligent briefings—more complete, more dynamic, and built for better outcomes.',
 											'icon' => [
 												'src' => 'icon-virtual-classroom.png',
 												'alt' => 'BRIEF',
@@ -339,7 +335,7 @@ $section4 = [
 										'props' => [
 											'title' => 'FLY',
 											'summary' => 'Immersive Flight Simulations',
-											'html' => 'Experience ultra-realistic scenarios in high-fidelity virtual simulators.',
+											'html' => 'Build confidence and skill through rich, realistic virtual flight experiences.',
 											'icon' => [
 												'src' => 'icon-virtual_reality.png',
 												'alt' => 'FLY',
@@ -350,7 +346,7 @@ $section4 = [
 										'props' => [
 											'title' => 'DEBRIEF',
 											'summary' => 'AI-Powered Debriefing',
-											'html' => 'Review key mission events with AI-tagged highlights for faster, smarter debriefs.',
+											'html' => 'Enrich every debrief with AI-highlighted insights, helping you quickly strengthen skills, recognize achievements, and drive continuous improvement.',
 											'icon' => [
 												'src' => 'icon-biometrics.png',
 												'alt' => 'DEBRIEF',
@@ -382,7 +378,7 @@ $section4 = [
 						[
 							'component' => 'Pretitle',
 							'props' => [
-								'html' => 'The Virtual Training Environment / 2',
+								'html' => 'The Virtual Training Environment / Additional Support Tools',
 							],
 						],
 						[
@@ -400,8 +396,8 @@ $section4 = [
 									],
 									[
 										'props' => [
-											'summary' => 'Better preparation',
-											'title' => 'Targeted<br>Remediation',
+											'summary' => 'AI Debrief',
+											'title' => 'Better Targeted Remediation',
 											'html' => 'AI identifies areas for improvement and suggests next steps for progress.',
 											'class' => 'col-md-33perc pr-md-5',
 										],
@@ -409,7 +405,7 @@ $section4 = [
 									[
 										'props' => [
 											'summary' => 'Augment learning',
-											'title' => 'Intelligent<br>Tutoring',
+											'title' => 'WINGMAN<sup>TM</sup><br>Intelligent Tutor',
 											'html' => 'AI provides real-time suggestions to learn while simulating.',
 											'class' => 'col-md-33perc pr-md-5',
 										],
@@ -700,7 +696,7 @@ $section8 = [
 								],
 								'title' => [
 									'props' => [
-										'html' => 'discover lightwing',
+										'html' => 'Discover Training Devices',
 									],
 								],
 								'cta' => [
@@ -715,16 +711,14 @@ $section8 = [
 										'props' => [
 											'title' => 'Enhanced Immersive Training Devices (eITD)',
 											'inner_title' => 'Cutting-Edge Training Devices for Immersive Experiences',
-											'html' => 'MissionXR offers a range of advanced training devices that deliver high-fidelity simulations and immersive learning. 
-											The compact eITDs are designed to provide an efficient and modern training solution for diverse environments.',
+											'html' => '<strong>MissionXR</strong> delivers advanced simulation training solutions that provide high-fidelity mixed reality experiences, easily adaptable for high-volume operations and remote mission requirements.',
 										],
 									],
 									[
 										'props' => [
-											'title' => 'Lightweight Training Device',
-											'inner_title' => 'Compact, High-Performance Training with LightWing',
-											'html' => 'The Lightweight eITD, featuring a custom-fabricated seat, HOTAS controls, curved HDTV, and a head-mounted display, delivers a modern training solution. 
-											Smaller and cost-effective, LightWing offers an ideal solution for training in limited spaces.',
+											'title' => 'Lightweight VR Sled',
+											'inner_title' => 'Cutting-Edge Training Devices for Immersive Experiences',
+											'html' => 'The <strong>Lightweight VR Sled</strong> features a custom-fabricated seat, HOTAS controls, curved HDTV, and a high-fidelity sound system to deliver a portable and affordable training solution for smaller spaces and budgets.',
 										],
 									],
 
@@ -763,11 +757,11 @@ $section9 = [
 			'class' => 'align-items-end flex-grow-1',
 			'columns' => [
 				[
-					'class' => 'col-sm-7',
+					'class' => 'col-md-7',
 					'widgets' => [],
 				],
 				[
-					'class' => 'col-sm-5',
+					'class' => 'col-sm-12 col-md-5',
 					'wrapper_class' => 'entry pb-1',
 					'widgets' => [
 						[
@@ -787,8 +781,8 @@ $section9 = [
 						[
 							'component' => 'MainButton',
 							'props' => [
-								'title' => 'Buy MissionXR now!',
-								'html' => 'click here to get an extimate',
+								'title' => 'Get MissionXR<br>Buy now!',
+								'html' => 'click here to get an estimate',
 								'href' => 'https://www.iperformx.com',
 							],
 

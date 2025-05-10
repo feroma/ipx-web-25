@@ -2,17 +2,31 @@
   <div class="accordion-1">
     <div class="row">
       <!--      ///////////////////////image-->
-      <div class="col-md-6 d-flex align-items-center overflow-hidden">
+      <div class="col-sm-12 col-md-6 d-flex align-items-center overflow-hidden">
         <div  class="v-tabs-items-content">
           <svg width="852" height="735" viewBox="0 0 852 735" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M626.953 735L6 735C2.68629 735 0 732.314 0 729L0 6C0 2.68629 2.68627 0 5.99998 0L846 0C849.314 0 852 2.6863 852 6L852 509.729C852 517.68 848.844 525.305 843.225 530.93L648.179 726.201C642.552 731.835 634.916 735 626.953 735Z"/>
+            <defs>
+              <mask :id="'myMask_accordion'">
+                <rect width="100%" height="100%" fill="black"/>
+                <path fill="white" d="M626.953 735L6 735C2.68629 735 0 732.314 0 729L0 6C0 2.68629 2.68627 0 5.99998 0L846 0C849.314 0 852 2.6863 852 6L852 509.729C852 517.68 848.844 525.305 843.225 530.93L648.179 726.201C642.552 731.835 634.916 735 626.953 735Z"/>
+              </mask>
+            </defs>
+            <image
+                :href="config.REPO_URL+'/'+content.image.src"
+                width="852"
+                height="735"
+                :mask="'url(#myMask_accordion)'"
+            />
           </svg>
+
+
+
         </div>
 
       </div>
       <!--      /////////////////////// / image-->
       <!--      ///////////////////////list-->
-      <div class="col-md-7 min-vh-100 d-flex flex-column justify-content-center">
+      <div class="col-md-7 col-content d-flex flex-column justify-content-center">
         <widget-pretitle v-if="content.pretitle" :content="content.pretitle.props"></widget-pretitle>
         <widget-main-title v-if="content.title" :content="content.title.props"></widget-main-title>
         <div class="accordion-container">
@@ -61,7 +75,7 @@
 import { ref, onMounted, watch, nextTick, onUnmounted } from 'vue';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
+const {config} = useAppState()
 // Registra il plugin ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 

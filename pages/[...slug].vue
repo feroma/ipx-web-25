@@ -2,11 +2,14 @@
   <!-- LOAD: {{loading}}-->
 
   <div v-if="loadedPageData && loadedPageData.page">
-    <SiteHeader class="d-none d-sm-block" v-if="loadedPageData.page.sections"
+    <SiteHeader class="d-none d-lg-block" v-if="loadedPageData.page.sections"
                 :sections="loadedPageData.page.sections"/>
-    <SiteHeaderMobile class="d-block d-sm-none" v-if="loadedPageData.page.sections"
+    <SiteHeaderMobile class="d-block d-lg-none" v-if="loadedPageData.page.sections"
                 :sections="loadedPageData.page.sections"/>
     <SidebarNavigator
+        v-if="loadedPageData.page.sections"
+        :sections="loadedPageData.page.sections"/>
+    <MenuOverlay
         v-if="loadedPageData.page.sections"
         :sections="loadedPageData.page.sections"/>
     <!--        <h1-title :title="pageData.title"></h1-title>-->
@@ -28,17 +31,22 @@
           :section="section"/>
 
     </div>
-    <SiteFooter class="d-none d-sm-block" v-if="loadedPageData.page.sections"
+    <SiteFooter class="d-none d-lg-block" v-if="loadedPageData.page.sections"
                 :sections="loadedPageData.page.sections"/>
-    <SiteFooterMobile class="d-block d-sm-none" v-if="loadedPageData.page.sections"
+    <SiteFooterMobile class="d-block d-lg-none" v-if="loadedPageData.page.sections"
                 :sections="loadedPageData.page.sections"/>
+    <ContactForm v-if="contactFormOpen"/>
   </div>
 </template>
 
 <script setup>
+import MenuOverlay from "~/components/MenuOverlay.vue"
+
 const {fetchData} = useApi()
+const { updateCurrentSection, changeHideOverflow, changeContactForm} = useAppState()
+
 const route = useRoute()
-const {pages, nav, config, updateState, updateCurrentPage} = useAppState()
+const {pages, nav, config, updateState, updateCurrentPage, contactFormOpen} = useAppState()
 
 const loading = ref(false)
 const error = ref(null)
@@ -105,7 +113,8 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 if (process.client) {
   gsap.registerPlugin(ScrollTrigger)
 }
-const {updateCurrentSection} = useAppState()
+
+
 
 // Funzione per inizializzare ScrollTrigger
 /*const initScrollTrigger = async () => {
@@ -170,6 +179,8 @@ const cleanupScrollTriggers = () => {
 }
 
 onMounted(() => {
+  //changeHideOverflow(true);
+  //changeContactForm(true);
   if (process.client) {
     console.log('MOUNTED')
     setTimeout(() => {
@@ -194,6 +205,23 @@ watch(currentSectionId, (newSectionId) => {
     console.log('No Sezione corrente')
   }
 })
+watch(contactFormOpen, (status, old_status) => {
+  console.log('contactFormOpen status:', {status,old_status})
+  if(old_status===false && status===true){
+    if (process.client) {
+      cleanupScrollTriggers()
+    }
+  }else
+  if(old_status===true && status===false){
+    if (process.client) {
+      cleanupScrollTriggers()
+      setTimeout(() => {
+        _initScrollTrigger()
+      }, 500)
+    }
+  }
+})
+
 
 </script>
 <style scoped>

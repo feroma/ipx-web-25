@@ -1,6 +1,6 @@
 <script setup>
 import {ref} from 'vue'
-
+const {config} = useAppState()
 const props = defineProps({
   content: {
     type: Object,
@@ -28,8 +28,7 @@ const activeTabIndex = ref(props.initialActiveIndex)
             <li v-for="(item, index) in content.items"
                 :key="index"
                 @click="activeTabIndex = index"
-                :class="{ 'active': activeTabIndex === index }"
-            >
+                :class="{ 'active': activeTabIndex === index }">
               <span v-html="item.props.title"/>
             </li>
           </ul>
@@ -38,7 +37,7 @@ const activeTabIndex = ref(props.initialActiveIndex)
 
       </div>
       <!--      ///////////////////////CONTENT-->
-      <div class="col-md-6">
+      <div class="col-sm-12 col-md-5">
         <div  class="v-tabs-items-content">
         <!--      //////////item-->
 
@@ -50,9 +49,22 @@ const activeTabIndex = ref(props.initialActiveIndex)
             :class="{ 'active': activeTabIndex === index }"
         >
 
-            <h1>{{ index }}</h1>
+<!--            <h1>{{ index }}</h1>-->
+
             <svg width="852" height="735" viewBox="0 0 852 735" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M626.953 735L6 735C2.68629 735 0 732.314 0 729L0 6C0 2.68629 2.68627 0 5.99998 0L846 0C849.314 0 852 2.6863 852 6L852 509.729C852 517.68 848.844 525.305 843.225 530.93L648.179 726.201C642.552 731.835 634.916 735 626.953 735Z"/>
+              <defs>
+                <mask :id="'myMask_vtabs_'+index">
+                  <rect width="100%" height="100%" fill="black"/>
+                  <path fill="white" d="M626.953 735L6 735C2.68629 735 0 732.314 0 729L0 6C0 2.68629 2.68627 0 5.99998 0L846 0C849.314 0 852 2.6863 852 6L852 509.729C852 517.68 848.844 525.305 843.225 530.93L648.179 726.201C642.552 731.835 634.916 735 626.953 735Z"/>
+                </mask>
+              </defs>
+              <image
+                  :href="config.REPO_URL+'/'+item.props.image"
+                  width="852"
+                  height="735"
+                  :mask="'url(#myMask_vtabs_'+index+')'"
+              />
+
             </svg>
           </div>
 
