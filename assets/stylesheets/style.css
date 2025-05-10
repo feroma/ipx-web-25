@@ -6431,9 +6431,13 @@ body {
 /**
 -----------------------------------------
  */
-@media (max-width: 1359.98px) {
+@media (max-width: 919.98px) {
   .row.min-vh-100, .min-vh-100.teaser-list-1, .min-vh-100.teaser-list-3, .min-vh-100.teaser-list-4 {
     min-height: calc(100vh - 60px) !important; } }
+
+@media (min-width: 920px) and (max-width: 1359.98px) {
+  .last-section {
+    min-height: calc(100vh - 40px) !important; } }
 
 @media (min-width: 920px) {
   .col-md-20perc {
@@ -6452,7 +6456,7 @@ body {
 
 .pb-footer {
   padding-bottom: 60px !important; }
-  @media (min-width: 680px) {
+  @media (min-width: 1360px) {
     .pb-footer {
       padding-bottom: 130px !important; } }
 
@@ -6464,7 +6468,7 @@ body {
 
 .padding-indent, .entry > p, .simple-list li, .accordion-container .accordion-content {
   padding-left: 30px; }
-  @media (min-width: 680px) {
+  @media (min-width: 1360px) {
     .padding-indent, .entry > p, .simple-list li, .accordion-container .accordion-content {
       padding-left: 60px; } }
 
@@ -6491,6 +6495,14 @@ body {
     .tbase, body, .pretitle, .teaser-list-3 .teaser h4, .main-button .label, .blocks .block h4, .contact-form-panel .form-container .form-group > label {
       font-size: 16px;
       line-height: 24px; } }
+  @media (min-width: 920px) {
+    .tbase, body, .pretitle, .teaser-list-3 .teaser h4, .main-button .label, .blocks .block h4, .contact-form-panel .form-container .form-group > label {
+      font-size: 14px;
+      line-height: 20px; } }
+  @media (min-width: 1360px) {
+    .tbase, body, .pretitle, .teaser-list-3 .teaser h4, .main-button .label, .blocks .block h4, .contact-form-panel .form-container .form-group > label {
+      font-size: 16px;
+      line-height: 24px; } }
   @media (min-width: 2550px) {
     .tbase, body, .pretitle, .teaser-list-3 .teaser h4, .main-button .label, .blocks .block h4, .contact-form-panel .form-container .form-group > label {
       font-size: 18px;
@@ -6511,6 +6523,14 @@ body {
     .tbase2, .cta-button .label {
       font-size: 16px;
       line-height: 24px; } }
+  @media (min-width: 920px) {
+    .tbase2, .cta-button .label {
+      font-size: 12px;
+      line-height: 18px; } }
+  @media (min-width: 1360px) {
+    .tbase2, .cta-button .label {
+      font-size: 16px;
+      line-height: 24px; } }
   @media (min-width: 2550px) {
     .tbase2, .cta-button .label {
       font-size: 18px;
@@ -6519,7 +6539,7 @@ body {
 .t2, .main-title, .teaser-list-2 .teaser .teaser-entry h3 {
   font-size: 28px;
   line-height: 28px; }
-  @media (min-width: 920px) {
+  @media (min-width: 1360px) {
     .t2, .main-title, .teaser-list-2 .teaser .teaser-entry h3 {
       font-size: 36px;
       line-height: 36px; } }
@@ -6543,7 +6563,7 @@ body {
     .t3, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-1b .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .accordion-container .accordion-content h3, .main-button-wrapper h2 {
       font-size: 18px;
       line-height: 20px; } }
-  @media (min-width: 920px) {
+  @media (min-width: 1360px) {
     .t3, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-1b .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .accordion-container .accordion-content h3, .main-button-wrapper h2 {
       font-size: 24px;
       line-height: 26px; } }
@@ -6652,7 +6672,7 @@ h1, h2, h3 {
     color: #ACD1E9;
     font-weight: bold;
     position: relative; }
-    @media (min-width: 680px) {
+    @media (min-width: 1360px) {
       .cta-button .label {
         padding: 10px 10px 10px 60px; } }
     .cta-button .label:before {
@@ -6664,7 +6684,7 @@ h1, h2, h3 {
       top: -6px;
       position: absolute;
       opacity: 0.2; }
-      @media (min-width: 680px) {
+      @media (min-width: 1360px) {
         .cta-button .label:before {
           width: 60px; } }
     .cta-button .label:after {
@@ -6755,6 +6775,12 @@ h1, h2, h3 {
   .teaser-list-1b .teaser img {
     max-width: 150px;
     height: auto; }
+    @media (min-width: 920px) {
+      .teaser-list-1b .teaser img {
+        max-width: 100px; } }
+    @media (min-width: 1360px) {
+      .teaser-list-1b .teaser img {
+        max-width: 150px; } }
   .teaser-list-1b .teaser .teaser-entry h4 {
     padding: 15px 0 15px 30px;
     border-left: solid 4px #fff;
@@ -6778,6 +6804,13 @@ h1, h2, h3 {
         position: absolute;
         width: 100%; } }
   @media (min-width: 920px) {
+    .panels-1 {
+      height: 100vh;
+      margin-left: 15px; }
+      .panels-1 .teaser {
+        position: absolute;
+        width: 100%; } }
+  @media (min-width: 1360px) {
     .panels-1 {
       height: 100vh;
       margin-left: 45px; }
@@ -6854,7 +6887,7 @@ h1, h2, h3 {
           width: 200px;
           height: auto;
           margin-right: 5px; } }
-      @media (min-width: 920px) {
+      @media (min-width: 1360px) {
         .teaser-list-2 .teaser svg {
           width: 300px; } }
     .teaser-list-2 .teaser .teaser-image {
@@ -6871,7 +6904,7 @@ h1, h2, h3 {
           top: 15px;
           left: auto;
           right: 15px; } }
-      @media (min-width: 920px) {
+      @media (min-width: 1360px) {
         .teaser-list-2 .teaser img {
           max-width: 120px; } }
     .teaser-list-2 .teaser .teaser-entry h3 {
@@ -6879,7 +6912,7 @@ h1, h2, h3 {
       text-transform: uppercase;
       font-weight: 200;
       color: #fff; }
-      @media (min-width: 920px) {
+      @media (min-width: 1360px) {
         .teaser-list-2 .teaser .teaser-entry h3 {
           padding: 30px 0 30px 34px; } }
     .teaser-list-2 .teaser .teaser-entry h4 {
@@ -6888,12 +6921,12 @@ h1, h2, h3 {
       text-transform: uppercase;
       font-weight: 400;
       color: #ACD1E9; }
-      @media (min-width: 920px) {
+      @media (min-width: 1360px) {
         .teaser-list-2 .teaser .teaser-entry h4 {
           padding: 15px 0 15px 30px; } }
     .teaser-list-2 .teaser .teaser-entry p {
       padding-left: 24px; }
-      @media (min-width: 920px) {
+      @media (min-width: 1360px) {
         .teaser-list-2 .teaser .teaser-entry p {
           padding-left: 39px; } }
     .teaser-list-2 .teaser .teaser-header {
@@ -6927,7 +6960,7 @@ h1, h2, h3 {
       color: #fff;
       border-left: solid 1px #fff;
       display: block; }
-      @media (min-width: 920px) {
+      @media (min-width: 1360px) {
         .teaser-list-3 .teaser h3 {
           padding: 30px 0 60px 34px; } }
     .teaser-list-3 .teaser h4 {
@@ -7005,7 +7038,7 @@ h1, h2, h3 {
   @media (min-width: 680px) {
     .v-tabs-items-list li span {
       padding-right: 15px; } }
-  @media (max-width: 1359.98px) {
+  @media (max-width: 919.98px) {
     .v-tabs-items-list li {
       border-left: solid 1px #fff;
       padding-left: 4px; }
@@ -7108,7 +7141,7 @@ h1, h2, h3 {
 .main-button-wrapper {
   padding-top: 15px;
   overflow: hidden; }
-  @media (min-width: 920px) {
+  @media (min-width: 1360px) {
     .main-button-wrapper {
       padding-top: 60px; } }
   .main-button-wrapper h2 {
@@ -7161,7 +7194,7 @@ h1, h2, h3 {
 @media (min-width: 920px) {
   #contacts .blocks {
     margin-right: 60px; } }
-@media (max-width: 919.98px) {
+@media (max-width: 1359.98px) {
   #contacts #row-contacts-0 #col-contacts-1 {
     display: flex;
     flex-direction: column;

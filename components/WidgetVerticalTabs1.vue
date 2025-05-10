@@ -17,7 +17,7 @@ const activeTabIndex = ref(props.initialActiveIndex)
 
 <template>
   <div class="v-tabs-1">
-    <div class="row">
+    <div class="row align-items-md-centers">
       <!--      ///////////////////////LIST-->
       <div class="col-md-5 offset-md-1">
         <widget-pretitle v-if="content.pretitle" :content="content.pretitle.props"></widget-pretitle>
@@ -37,7 +37,7 @@ const activeTabIndex = ref(props.initialActiveIndex)
 
       </div>
       <!--      ///////////////////////CONTENT-->
-      <div class="col-sm-12 col-md-5">
+      <div class="col-sm-12 col-md-7 col-lg-6 d-flex align-items-end">
         <div  class="v-tabs-items-content">
         <!--      //////////item-->
 

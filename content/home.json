@@ -9,6 +9,7 @@
         "menu_label": "Welcome",
         "bg": {
           "mobile": "section-1-bg-mobile.jpg",
+          "tablet": "section-1-bg-tablet.jpg",
           "desktop": "section-1-bg-desktop.jpg"
         },
         "rows": [
@@ -22,7 +23,7 @@
                   {
                     "component": "Pretitle",
                     "props": {
-                      "html": "iPerformX proudly present"
+                      "html": "iPerformX proudly presents"
                     }
                   },
                   {
@@ -64,6 +65,7 @@
         "menu_label": "Uniqueness",
         "bg": {
           "mobile": "section-2-bg-mobile.jpg",
+          "tablet": "section-2-bg-tablet.jpg",
           "desktop": "section-2-bg-desktop.jpg"
         },
         "rows": [
@@ -123,7 +125,7 @@
                 ]
               },
               {
-                "class": "col-sm-12 col-md-6 order-1 order-md-2",
+                "class": "col-sm-12 col-md-8 col-lg-6 order-1 order-md-2",
                 "widgets": [
                   {
                     "component": "Panels1",
@@ -349,7 +351,7 @@
                             "title": "Increase learning success",
                             "html": "Instructors can guide you live, from anywhere in the world.",
                             "image": "vte_01.jpg",
-                            "class": "col-md-33perc pr-md-5"
+                            "class": "col-md-33perc pr-lg-5"
                           }
                         },
                         {
@@ -358,7 +360,7 @@
                             "title": "Better Targeted Remediation",
                             "html": "AI identifies areas for improvement and suggests next steps for progress.",
                             "image": "vte_02.jpg",
-                            "class": "col-md-33perc pr-md-5"
+                            "class": "col-md-33perc pr-lg-5"
                           }
                         },
                         {
@@ -367,7 +369,7 @@
                             "title": "WINGMAN™ <br>Intelligent Tutor",
                             "html": "AI provides real-time suggestions to learn while simulating.",
                             "image": "vte_03.jpg",
-                            "class": "col-md-33perc pr-md-5"
+                            "class": "col-md-33perc pr-lg-5"
                           }
                         }
                       ]
@@ -590,9 +592,10 @@
         "class": "section-standard",
         "bg": {
           "mobile": "section-7-bg-mobile.jpg",
+          "tablet": "section-7-bg-tablet.jpg",
           "desktop": "section-7-bg-desktop.jpg"
         },
-        "container_class": "d-flex flex-column justify-content-center min-vh-100",
+        "container_class": "d-flex flex-column justify-content-center min-vh-100 last-section",
         "rows": [
           {
             "class": "align-items-end flex-grow-1",
@@ -602,7 +605,7 @@
                 "widgets": []
               },
               {
-                "class": "col-sm-12 col-md-5",
+                "class": "col-sm-12 col-md-6 col-lg-5",
                 "wrapper_class": "entry pb-1",
                 "widgets": [
                   {
@@ -630,7 +633,7 @@
             ]
           },
           {
-            "class": "align-items-center pt-5 py-md-5",
+            "class": "align-items-center pt-5 pt-md-2 py-lg-5",
             "columns": [
               {
                 "class": "offset-sm-1 col-sm-12",
@@ -644,8 +647,8 @@
                 ]
               },
               {
-                "class": "offset-sm-1 col-sm-12 d-md-flex pb-md-5",
-                "wrapper_class": "d-md-flex",
+                "class": "offset-sm-1 col-sm-12 d-md-flex pb-lg-5",
+                "wrapper_class": "d-lg-flex",
                 "widgets": [
                   {
                     "component": "ContactBlocks",
