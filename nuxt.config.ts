@@ -1,12 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 // @ts-ignore
 export default defineNuxtConfig({
-    compatibilityDate: '2024-04-03',
 
+    // nitro: {
+    //     preset: 'azure',
+    //     // Disabilita la compressione dei payload e lascia che sia Azure a gestirla
+    //     compressPublicAssets: false
+    // },
     // Metodo più recente per impostare il base URL
     app: {
       //  baseURL: '/ipx/mxr/'
-        baseURL: process.env.NODE_ENV === 'production'
+        baseURL: process.env.NODE_ENV === 'production' && false
             ? '/ipx/mxr/'
             : '/',
 
@@ -16,6 +20,7 @@ export default defineNuxtConfig({
     css: [
         '~/assets/stylesheets/style.css'
     ],
+
 
     //ssr: true,
     runtimeConfig: {
@@ -36,7 +41,6 @@ export default defineNuxtConfig({
             // Disabilita la pagina 404 di default
             display: false
         },
-
     },
 
     modules: [
