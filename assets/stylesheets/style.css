@@ -6469,19 +6469,19 @@ body {
 .first-entry {
   padding-bottom: 130px !important; }
 
-.mbottom, #mxr-logo, .pretitle, .summary, .entry > p, .main-title, .teaser-list-3 .teaser .teaser-image, .teaser-list-4 .teaser .teaser-image, .accordion-container .accordion-content {
+.mbottom, #mxr-logo, .pretitle, .summary, .entry > p, .main-title, .teaser-list-3 .teaser .teaser-image, .teaser-list-4 .teaser .teaser-image, .accordion-container .accordion-content, .accordion-mobile .accordion-mobile-header .accordion-mobile-content {
   margin-bottom: 15px; }
   @media (min-width: 680px) {
-    .mbottom, #mxr-logo, .pretitle, .summary, .entry > p, .main-title, .teaser-list-3 .teaser .teaser-image, .teaser-list-4 .teaser .teaser-image, .accordion-container .accordion-content {
+    .mbottom, #mxr-logo, .pretitle, .summary, .entry > p, .main-title, .teaser-list-3 .teaser .teaser-image, .teaser-list-4 .teaser .teaser-image, .accordion-container .accordion-content, .accordion-mobile .accordion-mobile-header .accordion-mobile-content {
       margin-bottom: 30px; } }
-  @media (min-width: 1360px) {
-    .mbottom, #mxr-logo, .pretitle, .summary, .entry > p, .main-title, .teaser-list-3 .teaser .teaser-image, .teaser-list-4 .teaser .teaser-image, .accordion-container .accordion-content {
+  @media (min-width: 1920px) {
+    .mbottom, #mxr-logo, .pretitle, .summary, .entry > p, .main-title, .teaser-list-3 .teaser .teaser-image, .teaser-list-4 .teaser .teaser-image, .accordion-container .accordion-content, .accordion-mobile .accordion-mobile-header .accordion-mobile-content {
       margin-bottom: 60px; } }
 
-.padding-indent, .entry > p, .simple-list li, .accordion-container .accordion-content {
+.padding-indent, .entry > p, .simple-list li, .accordion-container .accordion-content, .accordion-mobile .accordion-mobile-header .accordion-mobile-content {
   padding-left: 30px; }
   @media (min-width: 1360px) {
-    .padding-indent, .entry > p, .simple-list li, .accordion-container .accordion-content {
+    .padding-indent, .entry > p, .simple-list li, .accordion-container .accordion-content, .accordion-mobile .accordion-mobile-header .accordion-mobile-content {
       padding-left: 60px; } }
 
 .sticky-top {
@@ -6497,7 +6497,7 @@ body {
 /**
 =============== responsive font size
  */
-.title-font, h1, h2, h3, .cta-button .label, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-1b .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h3, .teaser-list-2 .teaser .teaser-entry h4, .teaser-list-3 .teaser h3, .teaser-list-3 .teaser h4, .teaser-list-4 .teaser h3, .v-tabs-items-list li span, .accordion-container .accordion-header, .accordion-container .accordion-content h3, .main-button .label, .blocks .block h4, .dots-container .dot .number, .dots-container .dot .tooltip span, #header .header_menu .main-menu .menu-item, #footer a, .close-menu span, #menu-overlay ul a, .contact-form-panel .form-container .form-group > label {
+.title-font, h1, h2, h3, .cta-button .label, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-1b .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h3, .teaser-list-2 .teaser .teaser-entry h4, .teaser-list-3 .teaser h3, .teaser-list-3 .teaser h4, .teaser-list-4 .teaser h3, .v-tabs-items-list li span, .accordion-container .accordion-header, .accordion-container .accordion-content h3, .accordion-mobile .accordion-mobile-header, .accordion-mobile .accordion-mobile-header .accordion-mobile-content h3, .main-button .label, .blocks .block h4, .dots-container .dot .number, .dots-container .dot .tooltip span, #header .header_menu .main-menu .menu-item, #footer a, .close-menu span, #menu-overlay ul a, .contact-form-panel .form-container .form-group > label {
   font-family: 'PP Monument Extended', 'sans-serif'; }
 
 .tbase, body, .pretitle, .teaser-list-3 .teaser h4, .main-button .label, .blocks .block h4, .contact-form-panel .form-container .form-group > label {
@@ -6567,24 +6567,32 @@ body {
 .t2b, .teaser-list-3 .teaser h3 {
   font-size: 22px;
   line-height: 30px; }
+  @media (min-width: 1360px) {
+    .t2b, .teaser-list-3 .teaser h3 {
+      font-size: 18px;
+      line-height: 22px; } }
+  @media (min-width: 1920px) {
+    .t2b, .teaser-list-3 .teaser h3 {
+      font-size: 22px;
+      line-height: 30px; } }
   @media (min-width: 2550px) {
     .t2b, .teaser-list-3 .teaser h3 {
       font-size: 48px;
       line-height: 48px; } }
 
-.t3, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-1b .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .accordion-container .accordion-content h3, .main-button-wrapper h2 {
+.t3, .summary, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-1b .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .accordion-container .accordion-content h3, .accordion-mobile .accordion-mobile-header .accordion-mobile-content h3, .main-button-wrapper h2 {
   font-size: 16px;
   line-height: 18px; }
   @media (min-width: 680px) {
-    .t3, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-1b .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .accordion-container .accordion-content h3, .main-button-wrapper h2 {
+    .t3, .summary, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-1b .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .accordion-container .accordion-content h3, .accordion-mobile .accordion-mobile-header .accordion-mobile-content h3, .main-button-wrapper h2 {
       font-size: 18px;
       line-height: 20px; } }
-  @media (min-width: 1360px) {
-    .t3, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-1b .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .accordion-container .accordion-content h3, .main-button-wrapper h2 {
+  @media (min-width: 1920px) {
+    .t3, .summary, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-1b .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .accordion-container .accordion-content h3, .accordion-mobile .accordion-mobile-header .accordion-mobile-content h3, .main-button-wrapper h2 {
       font-size: 24px;
       line-height: 26px; } }
   @media (min-width: 2550px) {
-    .t3, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-1b .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .accordion-container .accordion-content h3, .main-button-wrapper h2 {
+    .t3, .summary, .teaser-list-1 .teaser .teaser-entry h4, .teaser-list-1b .teaser .teaser-entry h4, .teaser-list-2 .teaser .teaser-entry h4, .accordion-container .accordion-content h3, .accordion-mobile .accordion-mobile-header .accordion-mobile-content h3, .main-button-wrapper h2 {
       font-size: 36px;
       line-height: 40px; } }
 
@@ -6794,7 +6802,7 @@ h1, h2, h3 {
     @media (min-width: 920px) {
       .teaser-list-1b .teaser img {
         max-width: 100px; } }
-    @media (min-width: 1360px) {
+    @media (min-width: 1920px) {
       .teaser-list-1b .teaser img {
         max-width: 150px; } }
     @media (min-width: 2550px) {
@@ -6837,7 +6845,7 @@ h1, h2, h3 {
       .panels-1 .teaser {
         position: absolute;
         width: 100%; } }
-  @media (min-width: 1360px) {
+  @media (min-width: 1920px) {
     .panels-1 {
       height: 100vh;
       margin-left: 45px; }
@@ -7105,13 +7113,25 @@ h1, h2, h3 {
 .accordion-1 .main-title {
   margin-bottom: 60px; }
 .accordion-1 .v-tabs-items-content {
-  width: 100%; }
+  width: 100%;
+  height: 100%;
+  position: relative; }
   .accordion-1 .v-tabs-items-content svg {
     width: 100%;
-    height: auto; }
+    height: auto;
+    opacity: 1; }
     @media (min-width: 920px) {
       .accordion-1 .v-tabs-items-content svg {
-        margin-left: -60px; } }
+        position: absolute;
+        left: -30px;
+        width: 100% !important;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: opacity .4s; } }
+  @media (min-width: 920px) {
+    .accordion-1 .v-tabs-items-content svg.active {
+      opacity: 1; } }
 .accordion-1 .col-content {
   padding-top: 30px; }
   @media (min-width: 920px) {
@@ -7178,12 +7198,64 @@ h1, h2, h3 {
     color: #fff; }
 
 /**
+---- accordion-mobile{
+ */
+.accordion-mobile .main-title {
+  margin-bottom: 60px; }
+.accordion-mobile svg {
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  padding-bottom: 30px; }
+.accordion-mobile .accordion-mobile-header {
+  padding: 15px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ACD1E9;
+  font-weight: 400;
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.4s;
+  cursor: pointer;
+  display: flex;
+  align-items: center; }
+  .accordion-mobile .accordion-mobile-header .accordion-title {
+    display: block;
+    flex-shrink: 0;
+    flex-grow: 1;
+    flex: 0 1 100%; }
+  .accordion-mobile .accordion-mobile-header:before {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background-color: #ACD1E9;
+    left: 0;
+    top: 0px;
+    position: absolute;
+    opacity: 1; }
+  .accordion-mobile .accordion-mobile-header:after {
+    content: '';
+    height: 1px;
+    background-color: #fff;
+    top: -2px;
+    position: absolute;
+    transition: all 0.4s;
+    width: 120px;
+    left: -60px;
+    opacity: 1; }
+  .accordion-mobile .accordion-mobile-header .accordion-mobile-content h3 {
+    padding: 0 0 15px 0;
+    text-transform: uppercase;
+    font-weight: 200;
+    color: #fff; }
+
+/**
 === Main Button
  */
 .main-button-wrapper {
   padding-top: 15px;
   overflow: hidden; }
-  @media (min-width: 1360px) {
+  @media (min-width: 1920px) {
     .main-button-wrapper {
       padding-top: 60px; } }
   .main-button-wrapper h2 {
@@ -7512,8 +7584,11 @@ h1, h2, h3 {
   bottom: 0;
   z-index: 1000;
   width: 100%;
-  max-width: 1920px;
+  max-width: 1540px;
   /* Applica la trasformazione alla maschera quando ├¿ l'ultima sezione */ }
+  @media (min-width: 2550px) {
+    #footer {
+      max-width: 2260px; } }
   @media (min-width: 680px) {
     #footer {
       display: block; } }
@@ -7527,7 +7602,8 @@ h1, h2, h3 {
     opacity: 0.5;
     letter-spacing: 0.2em;
     left: 0;
-    bottom: 0; }
+    bottom: 0;
+    margin-bottom: 10px; }
   #footer svg {
     z-index: 10;
     width: 100%;
@@ -7555,7 +7631,11 @@ h1, h2, h3 {
     transform: translateX(0%);
     opacity: 1;
     transition: all 0.4s;
+    max-width: 260px;
     line-height: 1; }
+    @media (min-width: 2550px) {
+      #footer a {
+        max-width: 380px; } }
     #footer a span {
       display: block;
       color: #fff;
@@ -7762,22 +7842,27 @@ body.hide-overflow {
       .contact-form-panel .form-container {
         padding: 45px 90px !important;
         max-width: 1000px; } }
-    .contact-form-panel .form-container .form-group > label {
-      color: #ACD1E9;
-      text-transform: uppercase;
-      padding-top: 15px;
-      position: relative;
-      width: 100%;
-      display: block; }
-      .contact-form-panel .form-container .form-group > label:before {
-        content: '';
-        position: absolute;
-        width: 100px;
-        height: 1px;
-        background-color: #ACD1E9;
-        opacity: 0.5;
-        left: 0;
-        top: 10px; }
+    .contact-form-panel .form-container .form-group {
+      margin-bottom: 30px; }
+      @media (min-width: 1360px) {
+        .contact-form-panel .form-container .form-group {
+          margin-bottom: 45px; } }
+      .contact-form-panel .form-container .form-group > label {
+        color: #ACD1E9;
+        text-transform: uppercase;
+        padding-top: 15px;
+        position: relative;
+        width: 100%;
+        display: block; }
+        .contact-form-panel .form-container .form-group > label:before {
+          content: '';
+          position: absolute;
+          width: 100px;
+          height: 1px;
+          background-color: #ACD1E9;
+          opacity: 0.5;
+          left: 0;
+          top: 10px; }
     .contact-form-panel .form-container .custom-checkbox.custom-control-inline {
       margin-right: 30px;
       min-width: 120px; }

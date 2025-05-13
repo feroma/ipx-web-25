@@ -20,12 +20,7 @@
                 "class": "offset-sm-1 col-sm-12 col-md-7",
                 "wrapper_class": "entry pb-footer first-entry",
                 "widgets": [
-                  {
-                    "component": "Pretitle",
-                    "props": {
-                      "html": "iPerformX proudly presents"
-                    }
-                  },
+
                   {
                     "component": "MxrLogo",
                     "props": {
@@ -35,20 +30,20 @@
                   {
                     "component": "Summary",
                     "props": {
-                      "html": "The Future of Flight Training"
+                      "html": "Accelerate Mastery for Mission-Ready Pilots"
                     }
                   },
                   {
                     "component": "Paragraph",
                     "props": {
-                      "html": "MissionXR: Where immersive synthetic training meets AI and remote instruction to deliver an efficient learning experience."
+                      "html": "MissionXR delivers an AI-powered virtual training environment, accelerating mastery through adaptive learning and remote instruction."
                     }
                   },
                   {
                     "component": "Cta",
                     "props": {
                       "html": "discover how...",
-                      "href": "#uniqueness"
+                      "href": "#overview"
                     }
                   }
                 ]
@@ -58,11 +53,11 @@
         ]
       },
       {
-        "id": "uniqueness",
+        "id": "overview",
         "container": "default",
         "layout": "default",
         "class": "section-standard",
-        "menu_label": "Uniqueness",
+        "menu_label": "Overview",
         "bg": {
           "mobile": "section-2-bg-mobile.jpg",
           "tablet": "section-2-bg-tablet.jpg",
@@ -79,7 +74,7 @@
                   {
                     "component": "Pretitle",
                     "props": {
-                      "html": "Uniqueness"
+                      "html": "Overview"
                     }
                   },
                   {
@@ -125,7 +120,7 @@
                 ]
               },
               {
-                "class": "col-sm-12 col-md-8 col-lg-6 order-1 order-md-2",
+                "class": "col-sm-12 col-md-8 col-xl-6 order-1 order-md-2",
                 "widgets": [
                   {
                     "component": "Panels1",
@@ -143,7 +138,7 @@
                         },
                         {
                           "props": {
-                            "title": "Adaptive, Learner-Focused Training",
+                            "title": "Adaptive, Data-Driven Training",
                             "icon": {
                               "src": "icon-cloud_network.png",
                               "alt": "MissionXR for Students"
@@ -195,7 +190,7 @@
                         {
                           "props": {
                             "title": "Early Intervention and Remediation",
-                            "html": "AI recognizes knowledge gaps in learner interactions and <strong>automates</strong> the delivery of validated generative instructional material.",
+                            "html": "AI recognizes knowledge gaps in learner interactions and <strong>automates</strong> the delivery of validated generative instructional material. Student response to adaptive remediation is tracked and scored against a competency framework within the LMS. Remediation efficacy is continuously <strong>analyzed and optimized</strong> based on proficiency advancements.",
                             "class": "col-md-50perc",
                             "image": {
                               "src": "students_1.jpg",
@@ -206,7 +201,7 @@
                         {
                           "props": {
                             "title": "Dynamic and Effective Learning",
-                            "html": "Through seamless integration with academic courseware, <strong>MissionXR</strong> creates a dynamic, personalized learning journey that inspires self-motivation and mastery. AI-driven learning paths, with instructor oversight, <strong>ensure students are supported</strong> and challenged appropriately throughout every phase of their education. ",
+                            "html": "Through seamless integration with academic courseware, <strong>MissionXR</strong> creates a dynamic, personalized learning journey that inspires self-motivation and mastery. AI-driven learning paths, with instructor oversight, <strong>ensure students are supported</strong> and challenged appropriately throughout every phase of their education.",
                             "class": "col-md-50perc",
                             "image": {
                               "src": "students_2.jpg",
@@ -348,7 +343,7 @@
                         {
                           "props": {
                             "summary": "Remote Instruction",
-                            "title": "Increase learning success",
+                            "title": "Increase Learning Success",
                             "html": "Instructors can guide you live, from anywhere in the world.",
                             "image": "vte_01.jpg",
                             "class": "col-md-33perc pr-lg-5"
@@ -565,14 +560,20 @@
                           "props": {
                             "title": "Enhanced Immersive Training Devices (eITD)",
                             "inner_title": "Cutting-Edge Training Devices for Immersive Experiences",
-                            "html": "<strong>MissionXR</strong> delivers advanced simulation training solutions that provide high-fidelity mixed reality experiences, easily adaptable for high-volume operations and remote mission requirements."
+                            "html": "<strong>MissionXR</strong> delivers advanced simulation training solutions that provide high-fidelity mixed reality experiences, easily adaptable for high-volume operations and remote mission requirements.",
+                            "image": {
+                              "src": "cockpit.jpg"
+                            }
                           }
                         },
                         {
                           "props": {
                             "title": "Lightweight VR Sled",
                             "inner_title": "Cutting-Edge Training Devices for Immersive Experiences",
-                            "html": "The <strong>Lightweight VR Sled</strong> features a custom-fabricated seat, HOTAS controls, curved HDTV, and a high-fidelity sound system to deliver a portable and affordable training solution for smaller spaces and budgets."
+                            "html": "The <strong>Lightweight VR Sled</strong> features a custom-fabricated seat, HOTAS controls, curved HDTV, and a high-fidelity sound system to deliver a portable and affordable training solution for smaller spaces and budgets.",
+                            "image": {
+                              "src": "lightwing.jpg"
+                            }
                           }
                         }
                       ]
@@ -608,12 +609,8 @@
                 "class": "col-sm-12 col-md-6 col-lg-5",
                 "wrapper_class": "entry pb-1",
                 "widgets": [
-                  {
-                    "component": "IpxLogo",
-                    "props": {
-                      "html": "iPerformX"
-                    }
-                  },
+
+
                   {
                     "component": "MxrLogo",
                     "props": {
@@ -633,7 +630,7 @@
             ]
           },
           {
-            "class": "align-items-center pt-5 pt-md-2 py-lg-5",
+            "class": "align-items-center pt-5 pt-md-2 py-xl-5",
             "columns": [
               {
                 "class": "offset-sm-1 col-sm-12",
@@ -648,7 +645,7 @@
               },
               {
                 "class": "offset-sm-1 col-sm-12 d-md-flex pb-lg-5",
-                "wrapper_class": "d-lg-flex",
+                "wrapper_class": "d-xl-flex",
                 "widgets": [
                   {
                     "component": "ContactBlocks",

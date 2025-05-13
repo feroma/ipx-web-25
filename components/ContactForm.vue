@@ -148,7 +148,7 @@
           <div class="form-row">
             <!-- Number of Seats -->
             <div class="form-group col-sm-6">
-              <label for="seats">Number of Seats <span class="text-danger">*</span></label>
+              <label for="seats">No. of Seats <span class="text-danger">*</span></label>
               <input
                   type="number"
                   class="form-control"

@@ -72,7 +72,7 @@ body {
   background-attachment: fixed;
 }
 
-$sectionWrapperTopPdMobile:60px;
+$sectionWrapperTopPdMobile: 60px;
 
 .section-wrapper {
 
@@ -202,19 +202,20 @@ $sectionWrapperTopPdMobile:60px;
 .row.min-vh-100 {
 
   @include media-breakpoint-down(sm) {
-    min-height: calc(100vh - #{$sectionWrapperTopPdMobile})!important;
+    min-height: calc(100vh - #{$sectionWrapperTopPdMobile}) !important;
   }
 
 }
-.last-section{
+
+.last-section {
   @include media-breakpoint-up(lg) {
-    min-height: calc(100vh - 40px)!important;
+    min-height: calc(100vh - 40px) !important;
   }
   @include media-breakpoint-up(md) {
-    min-height: calc(100vh - 40px)!important;
+    min-height: calc(100vh - 40px) !important;
   }
   @include media-breakpoint-up(lg) {
-    min-height:100vh !important;
+    min-height: 100vh !important;
   }
 }
 
@@ -249,7 +250,8 @@ $sectionWrapperTopPdMobile:60px;
   }
 
 }
-.first-entry{
+
+.first-entry {
   padding-bottom: 130px !important;
 }
 
@@ -258,7 +260,7 @@ $sectionWrapperTopPdMobile:60px;
   @include media-breakpoint-up(sm) {
     margin-bottom: $spacer*2;
   }
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     margin-bottom: $spacer*4;
   }
 }
@@ -363,6 +365,14 @@ $entry_indent: $spacer*4;
 .t2b {
   font-size: 22px;
   line-height: 30px;
+  @include media-breakpoint-up(lg) {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  @include media-breakpoint-up(xl) {
+    font-size: 22px;
+    line-height: 30px;
+  }
   @include media-breakpoint-up(xxl) {
     font-size: 48px;
     line-height: 48px;
@@ -380,7 +390,7 @@ $entry_indent: $spacer*4;
   //  font-size: 24px;
   //  line-height: 26px;
   //}
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     font-size: 24px;
     line-height: 26px;
   }
@@ -499,6 +509,7 @@ body {
 .summary {
   position: relative;
   @extend .mbottom;
+  @extend .t3
 }
 
 
@@ -701,7 +712,7 @@ body {
       @include media-breakpoint-up(md) {
         max-width: 100px;
       }
-      @include media-breakpoint-up(lg) {
+      @include media-breakpoint-up(xl) {
         max-width: 150px;
       }
       @include media-breakpoint-up(xxl) {
@@ -764,7 +775,7 @@ body {
       width: 100%;
     }
   }
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     height: 100vh;
     margin-left: $spacer*3;
     .teaser {
@@ -975,7 +986,7 @@ body {
       @include media-breakpoint-up(lg) {
         padding: $spacer*2 0 $spacer*4 $entry_indent/2+4px;
       }
-     // text-transform: uppercase;
+      // text-transform: uppercase;
       font-weight: 200;
       color: $white;
       border-left: solid 1px $white;
@@ -1099,6 +1110,7 @@ body {
     &.active {
       opacity: 1
     }
+
     @include media-breakpoint-up(sm) {
       span {
         padding-right: $spacer;
@@ -1146,9 +1158,10 @@ body {
 
 .v-tabs-items-content {
   width: 100%;
+
   svg {
     //fill: $azure_light;
-    width: 100%!important;
+    width: 100% !important;
     height: auto;
     //opacity: 0.5;
   }
@@ -1171,19 +1184,37 @@ body {
 
   .v-tabs-items-content {
     width: 100%;
+    height: 100%;
+    position: relative;
+    //background-color: red;
 
     svg {
       width: 100%;
       height: auto;
+      opacity: 1;
       @include media-breakpoint-up(md) {
-        margin-left: -$entry_indent;
+        position: absolute;
+        // margin-left: -$entry_indent;
+        left: -$grid-gutter-width;
+        width: 100%!important;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: opacity .4s;
       }
-
     }
+
+
+    svg.active {
+      @include media-breakpoint-up(md) {
+        opacity: 1;
+      }
+    }
+
 
   }
 
-  .col-content{
+  .col-content {
     padding-top: $spacer*2;
     @include media-breakpoint-up(md) {
       padding-top: 0;
@@ -1210,13 +1241,14 @@ body {
     display: flex;
     align-items: center;
 
-    .accordion-title{
+    .accordion-title {
       display: block;
       flex-shrink: 0;
       flex-grow: 1;
       flex: 0 1 100%;
     }
-    svg{
+
+    svg {
       margin-left: 5px;
       flex-shrink: 0;
       flex-grow: 0;
@@ -1257,7 +1289,7 @@ body {
         opacity: 1;
       }
 
-      svg{
+      svg {
         opacity: 0;
       }
     }
@@ -1280,6 +1312,89 @@ body {
   }
 }
 
+
+/**
+---- accordion-mobile{
+ */
+.accordion-mobile {
+  .main-title {
+    margin-bottom: $spacer*4;
+  }
+  svg {
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    padding-bottom: $spacer*2;
+  }
+  .accordion-mobile-header {
+    padding: $spacer 0;
+    //display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $azure_light;
+    font-weight: 400;
+    @extend .title-font;
+    position: relative;
+
+    opacity: 1;
+    transition: opacity 0.4s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    .accordion-title {
+      display: block;
+      flex-shrink: 0;
+      flex-grow: 1;
+      flex: 0 1 100%;
+    }
+
+
+
+    &:before {
+      content: '';
+      width: $entry_indent;
+      height: 4px;
+      background-color: $azure_light;
+      left: 0;
+      top: 0px;
+      position: absolute;
+      opacity: 1;
+    }
+
+    &:after {
+      content: '';
+
+      height: 1px;
+      background-color: $white;
+
+      top: -2px;
+      position: absolute;
+
+      transition: all 0.4s;
+      width: $entry_indent*2;
+      left: -$entry_indent;
+      opacity: 1;
+    }
+
+    .accordion-mobile-content {
+      @extend .padding-indent;
+      @extend .mbottom;
+
+      h3 {
+        @extend .t3;
+        @extend .title-font;
+        padding: 0 0 $spacer 0;
+        text-transform: uppercase;
+        font-weight: 200;
+        color: $white;
+      }
+    }
+
+
+  }
+}
+
 /**
 === Main Button
  */
@@ -1289,7 +1404,7 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
 .main-button-wrapper {
   padding-top: $spacer*1;
   overflow: hidden;
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     padding-top: $spacer*4;
   }
 
@@ -1348,6 +1463,7 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
     @include media-breakpoint-up(md) {
       margin-right: $spacer*4;
     }
+
     h4 {
       @extend .tbase;
       @extend .title-font;
@@ -1400,10 +1516,10 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
     @include media-breakpoint-up(md) {
       max-width: 200px;
     }
-
     height: auto;
     margin-right: $spacer;
   }
+
 }
 
 
@@ -1780,7 +1896,10 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
   bottom: 0;
   z-index: 1000;
   width: 100%;
-  max-width: 1920px;
+  max-width: 1540px;
+  @include media-breakpoint-up(xxl) {
+    max-width: 2260px;
+  }
   @include media-breakpoint-up(sm) {
     display: block;
   }
@@ -1796,6 +1915,7 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
     letter-spacing: 0.2em;
     left: 0;
     bottom: 0;
+    margin-bottom: 10px;
   }
 
   svg {
@@ -1833,7 +1953,10 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
     transform: translateX(0%);
     opacity: 1;
     transition: all 0.4s;
-
+    max-width: 260px;
+    @include media-breakpoint-up(xxl) {
+      max-width: 380px;
+    }
     @extend .title-font;
     line-height: 1;
 
@@ -1888,22 +2011,23 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
     padding: $spacer;
   }
 }
+
 /**
 -----------------------------menu overlay
  */
-%overlay-bg{
+%overlay-bg {
   cursor: pointer;
   position: fixed;
   top: 0;
   right: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba($black,0.5);
+  background-color: rgba($black, 0.5);
   z-index: 1;
   backdrop-filter: blur(10px);
 }
 
-.close-menu{
+.close-menu {
   z-index: 3;
   position: absolute;
   top: 0;
@@ -1911,20 +2035,22 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
   display: flex;
   align-items: center;
   opacity: 0.5;
-  span{
+
+  span {
     @extend .title-font;
     @extend .tsmall;
     text-transform: uppercase;
     color: $white;
   }
-  svg{
-    path{
-      stroke:$white
+
+  svg {
+    path {
+      stroke: $white
     }
   }
 }
 
-#menu-overlay{
+#menu-overlay {
   position: fixed;
   z-index: 1000;
   right: 0;
@@ -1937,20 +2063,20 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
   }
 
 
-  .menu-overlay-bg{
+  .menu-overlay-bg {
     cursor: pointer;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba($black,0.5);
+    background-color: rgba($black, 0.5);
     z-index: 1;
     backdrop-filter: blur(10px);
   }
 
 
-  ul{
+  ul {
     z-index: 2;
     position: absolute;
     width: 70%;
@@ -1960,12 +2086,12 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
     padding: $spacer;
     margin: 0;
     list-style: none;
-    background-color: rgba($blue,0.9);
+    background-color: rgba($blue, 0.9);
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    a{
+    a {
       display: block;
       padding: $spacer;
       margin-left: -$spacer;
@@ -1978,8 +2104,9 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
       text-decoration: none;
 
     }
-    .active{
-      a{
+
+    .active {
+      a {
         border-left: solid 4px $azure_light;
         color: $white;
       }
@@ -1987,63 +2114,74 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
   }
 
 
-  #mxr-menu-logo{
+  #mxr-menu-logo {
     z-index: 3;
     position: absolute;
     top: 30px;
     right: 0px;
     transform-origin: bottom right;
-    transform: rotate(-90deg) ;
-    svg{
+    transform: rotate(-90deg);
+
+    svg {
       width: 80vh;
       height: auto;
-      path{
-        fill:$white;
+
+      path {
+        fill: $white;
       }
     }
   }
 
   /////closed
-  &{
+  & {
     width: 0;
     transition: all 0.4s;
   }
-  ul{
+
+  ul {
     transform: translateY(100%);
     opacity: 0;
     transition: all 0.7s;
   }
-  .menu-overlay-bg{
+
+  .menu-overlay-bg {
     opacity: 0;
     transition: all 0.4s;
   }
-  #mxr-menu-logo{
+
+  #mxr-menu-logo {
     transition: all 0.4s;
-    transform: rotate(-90deg)  translateY(100%);
+    transform: rotate(-90deg) translateY(100%);
   }
-  .close-menu{
+
+  .close-menu {
     transform: translateY(200%);
     opacity: 0;
     transition: all 0.7s;
   }
+
   //open
-  &.opened{
-    &{
+  &.opened {
+    & {
       width: 100%;
     }
-    ul{
+
+    ul {
       transform: translateY(0%);
       opacity: 1;
 
     }
-    .menu-overlay-bg{
+
+    .menu-overlay-bg {
       opacity: 1;
     }
-    #mxr-menu-logo{
 
-      transform: rotate(-90deg)  translateY(0);
+    #mxr-menu-logo {
+
+      transform: rotate(-90deg) translateY(0);
     }
-    .close-menu{
+
+    .close-menu {
       transform: translateY(0);
       opacity: 1;
     }
@@ -2054,11 +2192,12 @@ $button_svg_bg_data: escape-svg($button_svg_bg) bottom right no-repeat; // Used 
 /**
 ============================= CONTACT FORM
  */
-body.hide-overflow{
+body.hide-overflow {
   overflow: hidden;
   height: 100%;
 }
-.contact-form-panel{
+
+.contact-form-panel {
   position: fixed;
   top: 0;
   left: 0;
@@ -2067,7 +2206,7 @@ body.hide-overflow{
   overflow: hidden;
   z-index: 1500;
 
-  .scrollable-overlay-bg{
+  .scrollable-overlay-bg {
     cursor: pointer;
     position: fixed;
     top: 0;
@@ -2077,7 +2216,7 @@ body.hide-overflow{
     z-index: 1;
   }
 
-  .scrollable{
+  .scrollable {
     position: fixed;
     top: 0;
     left: 0;
@@ -2089,12 +2228,12 @@ body.hide-overflow{
     align-items: center;
     // justify-content: center;
     z-index: 2;
-    background-color: rgba($black,0.5);
+    background-color: rgba($black, 0.5);
     backdrop-filter: blur(10px);
 
   }
 
-  .close-menu{
+  .close-menu {
     position: fixed;
     z-index: 50;
     top: 0;
@@ -2103,7 +2242,8 @@ body.hide-overflow{
       right: 30px;
     }
   }
-  .form-container{
+
+  .form-container {
     background-color: $blue_dark;
     background-image: url("../img/form_bg.jpg");
     background-repeat: no-repeat;
@@ -2117,42 +2257,49 @@ body.hide-overflow{
     z-index: 2;
 
     @include media-breakpoint-up(sm) {
-      padding: $spacer*4 $spacer*2!important;
+      padding: $spacer*4 $spacer*2 !important;
       max-width: 90vw;
     }
     @include media-breakpoint-up(lg) {
-      padding: $spacer*3 $spacer*6!important;
+      padding: $spacer*3 $spacer*6 !important;
       max-width: 1000px;
     }
 
 
-    .form-group  > label{
-      color: $azure_light;
-      text-transform: uppercase;
-      @extend .title-font;
-      @extend .tbase;
-      padding-top: $spacer;
-      position: relative;
-      width: 100%;
-      display: block;
-      &:before{
-        content: '';
-        position: absolute;
-        width: 100px;
-        height: 1px;
-        background-color: $azure_light;
-        opacity: 0.5;
-        left: 0;
-        top: 10px;
+    .form-group {
+      margin-bottom: $spacer*2;
+      @include media-breakpoint-up(lg) {
+        margin-bottom: $spacer*3;
+      }
+      > label {
+        color: $azure_light;
+        text-transform: uppercase;
+        @extend .title-font;
+        @extend .tbase;
+        padding-top: $spacer;
+        position: relative;
+        width: 100%;
+        display: block;
+
+        &:before {
+          content: '';
+          position: absolute;
+          width: 100px;
+          height: 1px;
+          background-color: $azure_light;
+          opacity: 0.5;
+          left: 0;
+          top: 10px;
+        }
       }
     }
 
-    .custom-checkbox.custom-control-inline{
+    .custom-checkbox.custom-control-inline {
       margin-right: $spacer*2;
       min-width: 120px;
     }
 
-    .main-button{
+    .main-button {
       //padding-left: $spacer*3;
       //padding-right: $spacer*3;
       width: 100%;
@@ -2175,7 +2322,6 @@ body.hide-overflow{
     color: #dc3545 !important;
   }
 }
-
 
 
 /* Stili di base - Puoi personalizzarli o rimuoverli se gestisci gli stili altrove */

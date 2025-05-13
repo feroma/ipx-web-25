@@ -61,8 +61,7 @@ const scrollToSection = (sectionId) => {
         </svg>
     </a>
     <svg
-        width="1920"
-        height="131"
+
         viewBox="0 0 1920 131"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
